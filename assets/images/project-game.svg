@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="gameL" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0c0d12" />
+      <stop offset="100%" stop-color="#020204" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#gameL)"/>
+  
+  <!-- Minimalist Cyber Sphere / Ring -->
+  <circle cx="300" cy="160" r="75" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" />
+  <circle cx="300" cy="160" r="60" fill="#06070a" stroke="#ffffff" stroke-width="2" />
+  
+  <!-- Grid Perspective Floor -->
+  <line x1="0" y1="240" x2="600" y2="240" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+  <line x1="0" y1="260" x2="600" y2="260" stroke="rgba(255,255,255,0.12)" stroke-width="1" />
+  <line x1="0" y1="290" x2="600" y2="290" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+  <line x1="0" y1="330" x2="600" y2="330" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+
+  <line x1="300" y1="240" x2="100" y2="360" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="300" y1="240" x2="220" y2="360" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="300" y1="240" x2="300" y2="360" stroke="rgba(255,255,255,0.2)" stroke-width="1" />
+  <line x1="300" y1="240" x2="380" y2="360" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+  <line x1="300" y1="240" x2="500" y2="360" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+
+  <!-- Geometric Character Silhouette -->
+  <polygon points="300,125 315,160 285,160" fill="#ffffff" />
+  <rect x="296" y="165" width="8" height="20" fill="#a1a1aa" />
+
+  <text x="300" y="325" font-family="'Syne', 'Alexandria', sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="4">NEON SHADOW // CYBER ACTION GAME</text>
+</svg>

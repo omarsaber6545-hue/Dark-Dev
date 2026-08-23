@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>DARK // دارك — مهندس برمجيات ومطور ألعاب وبوتات ديسكورد</title>
+    <meta name="description" content="البورتفوليو الشخصي للمطور دارك (DARK) — مهندس برمجيات عربي ومطور ألعاب وبوتات ديسكورد، متقن لكافة لغات البرمجة والأنظمة عالية الكفاءة.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <!-- Luxury Dark Stylesheet -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+
+    <!-- Cinematic Obsidian Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-title">DARK<span class="dot">.</span></div>
+            <div class="preloader-bar-wrap">
+                <div class="preloader-bar" id="preloader-bar"></div>
+            </div>
+            <div class="preloader-meta">
+                <span class="preloader-status" id="preloader-status">INITIALIZING SYSTEM</span>
+                <span class="preloader-count" id="preloader-count">0%</span>
+            </div>
+        </div>
+    </div>
+    <header class="header">
+        <div class="container header-inner">
+            <a href="#" class="brand-logo">
+                <div class="dot"></div>
+                <span>DARK</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="#workScroll" class="nav-item" data-i18n="navWorks">الأعمال</a>
+                <a href="#serviceScroll" class="nav-item" data-i18n="navServices">الخدمات</a>
+                <a href="#skillsScroll" class="nav-item" data-i18n="navSkills">المهارات</a>
+                <a href="#aboutScroll" class="nav-item" data-i18n="navAbout">عن المطور</a>
+                <a href="#pricingScroll" class="nav-item" data-i18n="navPricing">الباقات</a>
+                <a href="#contactScroll" class="nav-item" data-i18n="navContact">تواصل</a>
+            </nav>
+
+            <div class="header-right">
+                <div class="lang-switch">
+                    <button class="lang-btn active" data-lang="ar">AR</button>
+                    <button class="lang-btn" data-lang="en">EN</button>
+                </div>
+                <a href="#contactScroll" class="btn btn-white">
+                    <span data-i18n="headerRequest">طلب مشروع</span>
+                    <svg class="btn-icon-svg" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- ===================================================================
+             Hero Section (Davies v2 Authentic Luxury)
+             =================================================================== -->
+        <section class="hero-section" id="heroScroll">
+            <div class="container">
+                
+                <div class="hero-top-info">
+                    <div class="badge-status">
+                        <span class="status-dot"></span>
+                        <span data-i18n="heroStatus">متاح لتنفيذ المشاريع البرمجية والبوتات والألعاب</span>
+                    </div>
+
+                    <div style="font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted);" data-i18n="heroBadgeSubtitle">
+                        ARAB POLYGLOT ARCHITECT // EST. 2026
+                    </div>
+                </div>
+
+                <!-- Giant Typography Layered (Davies Signature) -->
+                <div class="hero-giant-wrap">
+                    <div class="hero-giant-stroke">DARK DEV</div>
+                    
+                    <div class="hero-portrait-card">
+                        <img src="assets/images/dark-portrait-enhanced.jpg" alt="Dark - Arab Developer Portrait" loading="eager">
+                    </div>
+
+                    <div class="hero-giant-fill">DARK DEV</div>
+                </div>
+
+                <!-- Roles Bar -->
+                <div class="hero-roles-bar">
+                    <span data-i18n="heroRole1">مبرمج عربي شامل (Polyglot)</span>
+                    <span class="sep">/</span>
+                    <span data-i18n="heroRole2">مطور ألعاب ومحركات 2D/3D</span>
+                    <span class="sep">/</span>
+                    <span data-i18n="heroRole3">مهندس أنظمة وبوتات ديسكورد المتقدمة</span>
+                    <span class="sep">/</span>
+                    <span data-i18n="heroRole4">خبير أنظمة سطح المكتب والـ Low-Level</span>
+                </div>
+
+                <!-- Actions -->
+                <div class="hero-actions">
+                    <a href="#contactScroll" class="btn btn-white">
+                        <span data-i18n="heroBtnStart">ابدأ مشروعك الآن</span>
+                        <svg class="btn-icon-svg" viewBox="0 0 24 24"><path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+                    </a>
+                    <a href="#workScroll" class="btn btn-ghost">
+                        <span data-i18n="heroBtnExplore">استكشف الأعمال</span>
+                    </a>
+                    <button class="btn btn-discord-lux copy-discord-tag">
+                        <svg class="btn-icon-svg" viewBox="0 0 24 24"><path d="M20.3 4.4A19.6 19.6 0 0015.4 3a13.3 13.3 0 00-.6 1.3 18.2 18.2 0 00-5.6 0A13.3 13.3 0 008.6 3a19.5 19.5 0 00-4.9 1.4C1.2 8.2.5 13.2.9 18.2A19.7 19.7 0 007 21c.5-.7 1-1.4 1.4-2.2a12.8 12.8 0 01-2-1c.2-.1.3-.3.5-.4a14 14 0 0010.2 0c.2.1.3.3.5.4a12.8 12.8 0 01-2 1c.4.8.9 1.5 1.4 2.2a19.7 19.7 0 006.1-2.8c.5-5.7-.8-10.6-2.8-13.8zM8.5 15.3c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1zm7 0c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1z"/></svg>
+                        <span data-i18n="heroDiscord">حساب ديسكورد</span>
+                    </button>
+                </div>
+
+                <!-- Bottom Stats Grid -->
+                <div class="hero-bottom-grid">
+                    <div class="stat-cell">
+                        <div class="stat-num" data-target="150" data-prefix="+">0</div>
+                        <div class="stat-label-lux" data-i18n="statLabel1">برنامج ونظام مكتبي منجز</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-num" data-target="85" data-prefix="+">0</div>
+                        <div class="stat-label-lux" data-i18n="statLabel2">بوت ديسكورد نشط ومحمي</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-num" data-target="40" data-prefix="+">0</div>
+                        <div class="stat-label-lux" data-i18n="statLabel3">لعبة ومود مخصص ومحرك</div>
+                    </div>
+                    <div class="stat-cell">
+                        <div class="stat-num" data-target="100" data-suffix="%">0</div>
+                        <div class="stat-label-lux" data-i18n="statLabel4">التزام بالدقة والسرعة</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             Infinite Monochromatic Ticker
+             =================================================================== -->
+        <div class="ticker-wrap">
+            <div class="ticker-track">
+                <div class="ticker-item"><span class="highlight">PYTHON</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">C++ &amp; C#</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">DISCORD ECOSYSTEMS</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">UNREAL ENGINE 5</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">GODOT 4</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">RUST &amp; GO</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">SYSTEMS SOFTWARE</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">AI AGENTS</span> <span class="star">✦</span></div>
+
+                <!-- Duplicate for infinite seamless scroll -->
+                <div class="ticker-item"><span class="highlight">PYTHON</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">C++ &amp; C#</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">DISCORD ECOSYSTEMS</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">UNREAL ENGINE 5</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">GODOT 4</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">RUST &amp; GO</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">SYSTEMS SOFTWARE</span> <span class="star">✦</span></div>
+                <div class="ticker-item"><span class="highlight">AI AGENTS</span> <span class="star">✦</span></div>
+            </div>
+        </div>
+
+        <!-- ===================================================================
+             01 / SELECTED WORKS (معرض الأعمال والمشاريع)
+             =================================================================== -->
+        <section class="section" id="workScroll">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-index">01 / SELECTED WORKS</div>
+                    <h2 class="section-title" data-i18n="secWorksTitle">أعمال ومشاريع برمجية رائدة</h2>
+                    <p class="section-desc" data-i18n="secWorksDesc">
+                        نخبة من المشاريع والبرمجيات المطورة بأعلى معايير الأداء وهندسة الكود النظيف.
+                    </p>
+                </div>
+
+                <!-- Filter Bar -->
+                <div class="tech-filter-bar">
+                    <button class="tech-filter-btn work-filter-btn active" data-filter="all" data-i18n="filterAll">الكل // ALL</button>
+                    <button class="tech-filter-btn work-filter-btn" data-filter="discord" data-i18n="filterDiscord">بوتات ديسكورد</button>
+                    <button class="tech-filter-btn work-filter-btn" data-filter="games" data-i18n="filterGames">تطوير ألعاب</button>
+                    <button class="tech-filter-btn work-filter-btn" data-filter="software" data-i18n="filterSoftware">برمجيات وأنظمة</button>
+                </div>
+
+                <!-- Editorial Works Grid -->
+                <div class="works-editorial-grid">
+                    <!-- Project 1: DarkGuard -->
+                    <div class="work-item-lux" data-category="discord">
+                        <div class="work-thumb-lux">
+                            <img src="assets/images/project-guard.svg" alt="DarkGuard Pro Discord Bot" loading="lazy">
+                            <div class="work-category-badge">DISCORD SECURITY</div>
+                        </div>
+                        <div class="work-body-lux">
+                            <h3 class="work-title-lux" data-i18n="p1Title">DarkGuard Pro — نظام حماية وإدارة ديسكورد</h3>
+                            <p class="work-desc-lux" data-i18n="p1Desc">
+                                نظام حماية ديسكورد فائق السرعة مزود بمحرك Anti-Nuke يستجيب في أقل من 15ms، سجلات تفريغ مشفرة، ولوحة تحكم ويب لإدارة وتأمين أكبر السيرفرات.
+                            </p>
+                            <div class="lux-tech-stack-row" style="margin-bottom: 24px;">
+                                <span class="lux-tag">TypeScript</span>
+                                <span class="lux-tag">Discord.js</span>
+                                <span class="lux-tag">Redis</span>
+                                <span class="lux-tag">Dashboard</span>
+                            </div>
+                            <div class="work-footer-lux">
+                                <a href="#" class="btn btn-ghost open-project-modal" data-project="darkguard">
+                                    <span data-i18n="btnDetails">تفاصيل المشروع</span>
+                                </a>
+                                <button class="btn btn-ghost copy-discord-tag" style="padding: 10px 16px;">
+                                    <span data-i18n="btnOrderSimilar">طلب مماثل</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Neon Shadow -->
+                    <div class="work-item-lux" data-category="games">
+                        <div class="work-thumb-lux">
+                            <img src="assets/images/project-game.svg" alt="Neon Shadow Cyber Run Game" loading="lazy">
+                            <div class="work-category-badge">GAME DEVELOPMENT</div>
+                        </div>
+                        <div class="work-body-lux">
+                            <h3 class="work-title-lux" data-i18n="p2Title">Neon Shadow: Cyber Run — لعبة أكشن سايبربانك</h3>
+                            <p class="work-desc-lux" data-i18n="p2Desc">
+                                لعبة مغامرات وحركات سريعة تجري أحداثها في مدينة مظلمة نيونية، تدعم القتال بالسيف النيوني، القفز على الجدران، وموسيقى تفاعلية.
+                            </p>
+                            <div class="lux-tech-stack-row" style="margin-bottom: 24px;">
+                                <span class="lux-tag">Godot 4</span>
+                                <span class="lux-tag">C#</span>
+                                <span class="lux-tag">Pixel Art</span>
+                                <span class="lux-tag">Custom Physics</span>
+                            </div>
+                            <div class="work-footer-lux">
+                                <a href="#" class="btn btn-ghost open-project-modal" data-project="neonshadow">
+                                    <span data-i18n="p2Btn1">تفاصيل اللعبة</span>
+                                </a>
+                                <button class="btn btn-ghost open-project-modal" data-project="neonshadow" style="padding: 10px 16px;">
+                                    <span data-i18n="p2Btn2">معاينة المواصفات</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: DarkOptimizer -->
+                    <div class="work-item-lux" data-category="software">
+                        <div class="work-thumb-lux">
+                            <img src="assets/images/project-optimizer.svg" alt="DarkOptimizer Windows Utility" loading="lazy">
+                            <div class="work-category-badge">DESKTOP UTILITY</div>
+                        </div>
+                        <div class="work-body-lux">
+                            <h3 class="work-title-lux" data-i18n="p3Title">DarkOptimizer — أداة تسريع الويندوز وتخفيض البينج</h3>
+                            <p class="work-desc-lux" data-i18n="p3Desc">
+                                أداة خفيفة لضبط نوى المعالج وتقليل تأخير الإدخال (Input Lag Reduction) مع تنظيف الكاش والذاكرة العشوائية للاعبين والمطورين.
+                            </p>
+                            <div class="lux-tech-stack-row" style="margin-bottom: 24px;">
+                                <span class="lux-tag">C# .NET 8</span>
+                                <span class="lux-tag">C++ WinAPI</span>
+                                <span class="lux-tag">Low-Level</span>
+                            </div>
+                            <div class="work-footer-lux">
+                                <a href="#" class="btn btn-ghost open-project-modal" data-project="darkoptimizer">
+                                    <span data-i18n="p3Btn1">تفاصيل البرنامج</span>
+                                </a>
+                                <button class="btn btn-ghost open-project-modal" data-project="darkoptimizer" style="padding: 10px 16px;">
+                                    <span data-i18n="p3Btn2">فحص الأداء</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: Nexus Sound Engine -->
+                    <div class="work-item-lux" data-category="discord">
+                        <div class="work-thumb-lux">
+                            <img src="assets/images/project-music.svg" alt="Nexus Sound Engine Discord Bot" loading="lazy">
+                            <div class="work-category-badge">DISCORD AUDIO</div>
+                        </div>
+                        <div class="work-body-lux">
+                            <h3 class="work-title-lux" data-i18n="p4Title">Nexus Audio Engine — بوت صوتيات فائق النقاء</h3>
+                            <p class="work-desc-lux" data-i18n="p4Desc">
+                                بوت صوتي استوديو ببث 320kbps Lossless بدون أي تقطيع أو ضياع في الحزم، مع فلاتر صوتية حصرية تشمل 8D Spatial Audio وBassBoost.
+                            </p>
+                            <div class="lux-tech-stack-row" style="margin-bottom: 24px;">
+                                <span class="lux-tag">Python</span>
+                                <span class="lux-tag">Pycord</span>
+                                <span class="lux-tag">Lavalink v4</span>
+                                <span class="lux-tag">Audio DSP</span>
+                            </div>
+                            <div class="work-footer-lux">
+                                <a href="#" class="btn btn-ghost open-project-modal" data-project="nexusmusic">
+                                    <span data-i18n="p4Btn1">تفاصيل البوت</span>
+                                </a>
+                                <button class="btn btn-ghost copy-discord-tag" style="padding: 10px 16px;">
+                                    <span data-i18n="p4Btn2">طلب البوت</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             02 / SERVICES (الخدمات البرمجية)
+             =================================================================== -->
+        <section class="section" id="serviceScroll">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-index">02 / SERVICES</div>
+                    <h2 class="section-title" data-i18n="secServicesTitle">حلول برمجية متكاملة وهندسة أنظمة</h2>
+                    <p class="section-desc" data-i18n="secServicesDesc">
+                        تطوير مخصص وشامل يبدأ من التخطيط المعماري وحتى البناء والتسليم النهائي.
+                    </p>
+                </div>
+
+                <div class="services-list-grid">
+                    <!-- Service 1 -->
+                    <div class="lux-service-card">
+                        <div>
+                            <div class="lux-service-num">01</div>
+                            <h3 class="lux-service-title" data-i18n="s1Title">تطوير برمجيات سطح المكتب والسحابة</h3>
+                            <p class="lux-service-desc" data-i18n="s1Desc">
+                                بناء تطبيقات سطح المكتب عالية الأداء لأنظمة Windows وLinux وmacOS بلغات C++ وC# وPython مع استهلاك أدنى لموارد النظام.
+                            </p>
+                        </div>
+                        <div class="lux-tech-stack-row">
+                            <span class="lux-tag">C++</span>
+                            <span class="lux-tag">C# .NET</span>
+                            <span class="lux-tag">Python</span>
+                            <span class="lux-tag">Go</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="lux-service-card">
+                        <div>
+                            <div class="lux-service-num">02</div>
+                            <h3 class="lux-service-title" data-i18n="s2Title">صناعة الألعاب والمحركات 2D / 3D</h3>
+                            <p class="lux-service-desc" data-i18n="s2Desc">
+                                تطوير الألعاب المستقلة من الصفر، برمجة أنظمة الفيزياء، الذكاء الاصطناعي للأعداء، وتطوير المودات الاحترافية لمحركات الألعاب.
+                            </p>
+                        </div>
+                        <div class="lux-tech-stack-row">
+                            <span class="lux-tag">Unreal Engine 5</span>
+                            <span class="lux-tag">Godot 4</span>
+                            <span class="lux-tag">Unity</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="lux-service-card">
+                        <div>
+                            <div class="lux-service-num">03</div>
+                            <h3 class="lux-service-title" data-i18n="s3Title">هندسة بوتات وأنظمة ديسكورد</h3>
+                            <p class="lux-service-desc" data-i18n="s3Desc">
+                                برمجة بوتات ديسكورد شاملة: أنظمة حماية (Anti-Nuke)، صوتيات فائقة الجودة، ألعاب واقتصاد، ولوحات تحكم ويب متزامنة عبر REST API.
+                            </p>
+                        </div>
+                        <div class="lux-tech-stack-row">
+                            <span class="lux-tag">Discord.js v14</span>
+                            <span class="lux-tag">Pycord</span>
+                            <span class="lux-tag">Redis</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="lux-service-card">
+                        <div>
+                            <div class="lux-service-num">04</div>
+                            <h3 class="lux-service-title" data-i18n="s4Title">تطبيقات الويب المتكاملة والـ APIs</h3>
+                            <p class="lux-service-desc" data-i18n="s4Desc">
+                                بناء منصات ويب تفاعلية وسريعة الاستجابة ولوحات تحكم إدارية مع قواعد بيانات سريعة وقوية (Full-Stack).
+                            </p>
+                        </div>
+                        <div class="lux-tech-stack-row">
+                            <span class="lux-tag">Next.js</span>
+                            <span class="lux-tag">FastAPI</span>
+                            <span class="lux-tag">PostgreSQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="lux-service-card">
+                        <div>
+                            <div class="lux-service-num">05</div>
+                            <h3 class="lux-service-title" data-i18n="s5Title">الأتمتة والذكاء الاصطناعي وScraping</h3>
+                            <p class="lux-service-desc" data-i18n="s5Desc">
+                                بناء روبوتات أتمتة المهام، استخراج وتحليل البيانات الضخمة (Web Scraping)، ودمج نماذج الذكاء الاصطناعي المتقدمة.
+                            </p>
+                        </div>
+                        <div class="lux-tech-stack-row">
+                            <span class="lux-tag">AI LLMs</span>
+                            <span class="lux-tag">Selenium</span>
+                            <span class="lux-tag">Playwright</span>
+                        </div>
+                    </div>
+
+                    <!-- Service 6 -->
+                    <div class="lux-service-card">
+                        <div>
+                            <div class="lux-service-num">06</div>
+                            <h3 class="lux-service-title" data-i18n="s6Title">الحماية وتحسين زمن الاستجابة</h3>
+                            <p class="lux-service-desc" data-i18n="s6Desc">
+                                مراجعة وتأمين الأكواد البرمجية، تشفير البيانات الحساسة، وتحسين أداء الخوارزميات وتخفيض البينج وزمن الاستجابة.
+                            </p>
+                        </div>
+                        <div class="lux-tech-stack-row">
+                            <span class="lux-tag">Cybersecurity</span>
+                            <span class="lux-tag">Low-Latency</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             03 / TECH STACK (كافة لغات البرمجة والتقنيات)
+             =================================================================== -->
+        <section class="section" id="skillsScroll">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-index">03 / TECH STACK</div>
+                    <h2 class="section-title" data-i18n="secStackTitle">متمكن من لغات وتقنيات البرمجة الحديثة</h2>
+                    <p class="section-desc" data-i18n="secStackDesc">
+                        مرونة فائقة في كتابة الأكواد واختيار التقنية الأمثل والأسرع لكل مشروع.
+                    </p>
+                </div>
+
+                <div class="tech-filter-bar">
+                    <button class="tech-filter-btn active" data-filter="all" data-i18n="filterStackAll">الكل // ALL</button>
+                    <button class="tech-filter-btn" data-filter="languages" data-i18n="filterStackLangs">لغات البرمجة (Languages)</button>
+                    <button class="tech-filter-btn" data-filter="gamedev" data-i18n="filterStackGames">محركات الألعاب (Game Dev)</button>
+                    <button class="tech-filter-btn" data-filter="discord" data-i18n="filterStackDiscord">الديسكورد والأنظمة</button>
+                </div>
+
+                <div class="tech-cards-grid">
+                    <!-- Python -->
+                    <div class="tech-card-lux" data-category="languages discord">
+                        <div class="tech-icon-lux">
+                            <svg viewBox="0 0 24 24"><path d="M11.9 2c-3.7 0-4.6 1.6-4.6 3.2v2.5h4.7v.7H5.2c-1.6 0-3.2.9-3.2 4.6 0 3.7 1.3 4.6 3.2 4.6h1.9v-2.3c0-2.2 1.9-4 4.1-4h4.7c.6 0 1.2-.5 1.2-1.2V5.2c0-1.6-1.5-3.2-5.2-3.2zm-1.8 1.4c.5 0 .9.4.9.9s-.4.9-.9.9-.9-.4-.9-.9.4-.9.9-.9zM18.8 6.4h-1.9v2.3c0 2.2-1.9 4-4.1 4H8.1c-.6 0-1.2.5-1.2 1.2v4.9c0 1.6 1.5 3.2 5.2 3.2 3.7 0 4.6-1.6 4.6-3.2v-2.5H12v-.7h6.8c1.6 0 3.2-.9 3.2-4.6 0-3.7-1.3-4.6-3.2-4.6zm-4.9 14.8c-.5 0-.9-.4-.9-.9s.4-.9.9-.9.9.4.9.9-.4.9-.9.9z"/></svg>
+                        </div>
+                        <div class="tech-name-lux">Python</div>
+                        <div class="tech-meta-lux">Architecture // 99%</div>
+                    </div>
+
+                    <!-- C++ -->
+                    <div class="tech-card-lux" data-category="languages gamedev">
+                        <div class="tech-icon-lux">
+                            <svg viewBox="0 0 24 24"><path d="M22.5 12l-4.5 7.8H8.9L4.4 12l4.5-7.8h9.1L22.5 12zm-13.6 3.3l1.8-3.1-1.8-3.1h-2l-1.8 3.1 1.8 3.1h2zm6.2-4.2h1.1v-1.1h.9v1.1h1.1v.9h-1.1v1.1h-.9V12h-1.1v-.9zm-3.2 0h1.1v-1.1h.9v1.1h1.1v.9H13v1.1h-.9V12h-1.1v-.9z"/></svg>
+                        </div>
+                        <div class="tech-name-lux">C++</div>
+                        <div class="tech-meta-lux">High Performance // 95%</div>
+                    </div>
+
+                    <!-- C# -->
+                    <div class="tech-card-lux" data-category="languages gamedev">
+                        <div class="tech-icon-lux">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7.5v9L12 22l10-5.5v-9L12 2zm-1.8 13.5c-2 0-3.6-1.6-3.6-3.5s1.6-3.5 3.6-3.5c1.2 0 2.2.5 2.8 1.4l-1.4 1c-.3-.5-.8-.8-1.4-.8-1.1 0-2 .9-2 2s.9 2 2 2c.6 0 1.1-.3 1.4-.8l1.4 1c-.6.8-1.6 1.2-2.8 1.2zm6.6-2.5h-1.2v1.5h-.8V13h-1.2v-.8h1.2v-1.5h-1.2V10h1.2V8.5h.8V10h1.2v.7h-1.2v1.5h1.2v.8z"/></svg>
+                        </div>
+                        <div class="tech-name-lux">C# .NET</div>
+                        <div class="tech-meta-lux">Enterprise // 96%</div>
+                    </div>
+
+                    <!-- TypeScript -->
+                    <div class="tech-card-lux" data-category="languages discord">
+                        <div class="tech-icon-lux">
+                            <svg viewBox="0 0 24 24"><path d="M3 3h18v18H3V3zm10.5 8.7h-2V19h-2.2v-7.3h-2V9.8h6.2v1.9zm5.7 3.5c0 2.4-1.8 3.8-4.4 3.8-1.3 0-2.6-.4-3.4-1l.7-1.7c.7.5 1.6.8 2.6.8 1.4 0 2.2-.6 2.2-1.6 0-2.3-4.5-1.7-4.5-4.7 0-2.2 1.7-3.6 4.1-3.6 1.2 0 2.2.3 3 .8l-.7 1.7c-.6-.4-1.4-.7-2.3-.7-1.2 0-1.9.6-1.9 1.4 0 2.2 4.6 1.6 4.6 4.8z"/></svg>
+                        </div>
+                        <div class="tech-name-lux">TypeScript / JS</div>
+                        <div class="tech-meta-lux">Full-Stack // 98%</div>
+                    </div>
+
+                    <!-- HTML5 / CSS3 -->
+                    <div class="tech-card-lux" data-category="languages">
+                        <div class="tech-icon-lux">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L3 4.5l1.6 13.8L12 22l7.4-3.7L21 4.5 12 2zm6 5.5l-.3 2.5h-8l.2 2h7.5l-.6 5.8-4.8 1.4-4.8-1.4-.3-3.3h2.2l.2 1.6 2.7.7 2.7-.7.3-2.6H8.1l-.7-6H18z"/></svg>
+                        </div>
+                        <div class="tech-name-lux">HTML5 / CSS3</div>
+                        <div class="tech-meta-lux">Modern Web // 99%</div>
+                    </div>
+
+                    <!-- Unity -->
+                    <div class="tech-card-lux" data-category="gamedev">
+                        <div class="tech-icon-lux">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L3 7v10l9 5 9-5V7l-9-5zm0 2.3l6.7 3.7L12 11.7 5.3 8 12 4.3zM4.8 9.5l6.2 3.4v7l-6.2-3.4v-7zm14.4 7l-6.2 3.4v-7l6.2-3.4v7z"/></svg>
+                        </div>
+                        <div class="tech-name-lux">Unity</div>
+                        <div class="tech-meta-lux">Game Modules // 94%</div>
+                    </div>
+
+                    <!-- Discord -->
+                    <div class="tech-card-lux" data-category="discord">
+                        <div class="tech-icon-lux">
+                            <svg viewBox="0 0 24 24"><path d="M20.3 4.4A19.6 19.6 0 0015.4 3a13.3 13.3 0 00-.6 1.3 18.2 18.2 0 00-5.6 0A13.3 13.3 0 008.6 3a19.5 19.5 0 00-4.9 1.4C1.2 8.2.5 13.2.9 18.2A19.7 19.7 0 007 21c.5-.7 1-1.4 1.4-2.2a12.8 12.8 0 01-2-1c.2-.1.3-.3.5-.4a14 14 0 0010.2 0c.2.1.3.3.5.4a12.8 12.8 0 01-2 1c.4.8.9 1.5 1.4 2.2a19.7 19.7 0 006.1-2.8c.5-5.7-.8-10.6-2.8-13.8zM8.5 15.3c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1zm7 0c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1z"/></svg>
+                        </div>
+                        <div class="tech-name-lux">Discord API / Bots</div>
+                        <div class="tech-meta-lux">Discord.js &amp; Pycord // 100%</div>
+                    </div>
+
+                    <!-- Java -->
+                    <div class="tech-card-lux" data-category="languages">
+                        <div class="tech-icon-lux">
+                            <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 00-9 9c0 4 2.6 7.4 6.3 8.6.6.1.9-.3.9-.6v-2.2c-2.5.5-3.1-1.2-3.1-1.2-.4-1.1-1-1.4-1-1.4-.8-.6.1-.6.1-.6.9.1 1.4 1 1.4 1 .8 1.4 2.2 1 2.7.8.1-.6.3-1 .6-1.3-2-.2-4.1-1-4.1-4.5 0-1 .3-1.8 1-2.4-.1-.2-.4-1.1.1-2.4 0 0 .8-.2 2.5 1a8.7 8.7 0 014.6 0c1.7-1.2 2.5-1 2.5-1 .5 1.3.2 2.2.1 2.4.6.6 1 1.4 1 2.4 0 3.5-2.1 4.3-4.1 4.5.3.3.6.9.6 1.8v2.6c0 .3.2.7.9.6A9 9 0 0021 12a9 9 0 00-9-9z"/></svg>
+                        </div>
+                        <div class="tech-name-lux">Java</div>
+                        <div class="tech-meta-lux">Applications // 90%</div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             04 / ABOUT ME & TERMINAL (نبذة عن دارك والترمينال التفاعلي)
+             =================================================================== -->
+        <section class="section" id="aboutScroll">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-index">04 / ABOUT DARK</div>
+                    <h2 class="section-title" data-i18n="secAboutTitle">الهوية التقنية والشغف البرمجي</h2>
+                    <p class="section-desc" data-i18n="secAboutDesc">
+                        أنا "دارك" (DARK) — مهندس برمجيات عربي ومطور ألعاب وبوتات ديسكورد. أمتلك شغفاً عميقاً ببناء الأنظمة المتينة وحل المشكلات التقنية الصعبة.
+                    </p>
+                </div>
+
+                <div class="about-split">
+                    <div class="about-text-content">
+                        <h3 class="about-headline" data-i18n="aboutHeadline">
+                            أحول الرؤى البرمجية الطموحة إلى أنظمة فائقة السرعة والاستقرار.
+                        </h3>
+                        <p class="about-paragraph" data-i18n="aboutParagraph">
+                            بفضل إتقاني الشامل لكافة لغات البرمجة من اللغات منخفضة المستوى وحتى أطر الويب والذكاء الاصطناعي، أقدم حلولاً مخصصة تضمن الكفاءة، الأمان، والتصميم العصري المتقن.
+                        </p>
+
+                        <div class="about-matrix-points">
+                            <div class="matrix-point"><i>✔</i> <span data-i18n="matrixPoint1">إتقان شامل لكافة لغات البرمجة</span></div>
+                            <div class="matrix-point"><i>✔</i> <span data-i18n="matrixPoint2">كود نظيف وموثق وقابل للتوسع</span></div>
+                            <div class="matrix-point"><i>✔</i> <span data-i18n="matrixPoint3">استجابة سريعة ودعم فني ممتد</span></div>
+                            <div class="matrix-point"><i>✔</i> <span data-i18n="matrixPoint4">حماية متقدمة ضد الثغرات</span></div>
+                        </div>
+
+                        <div style="display:flex; gap:16px; flex-wrap:wrap; margin-top:10px;">
+                            <a href="#contactScroll" class="btn btn-white">
+                                <span data-i18n="btnConsult">طلب استشارة أو مشروع</span>
+                            </a>
+                            <button class="btn btn-ghost copy-discord-tag">
+                                <span data-i18n="btnDiscord">حسابي على ديسكورد</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Luxury Monochromatic Terminal -->
+                    <div class="dark-terminal-box">
+                        <div class="dark-terminal-top">
+                            <div class="dark-terminal-dots">
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot"></div>
+                            </div>
+                            <div style="color:var(--text-muted); font-size:0.8rem;">dark@core-system: ~ (interactive cli)</div>
+                            <div style="color:#ffffff; font-size:0.75rem;">ONLINE</div>
+                        </div>
+
+                        <div class="dark-terminal-content" id="terminal-body">
+                            <div class="t-line">
+                                <span class="t-p">dark@terminal:~$</span> <span class="t-cmd">whoami</span>
+                            </div>
+                            <div class="t-line t-green">
+                                ⚡ DARK (دارك) - Software Architect, Game Creator &amp; Discord Specialist
+                            </div>
+                            <div class="t-line">
+                                <span class="t-p">dark@terminal:~$</span> <span class="t-cmd">echo "Type help to explore commands"</span>
+                            </div>
+                            <div class="t-line t-silver" data-i18n="terminalIntro">
+                                اكتب الأوامر أو اضغط على المقترحات بالأسفل:
+                            </div>
+                        </div>
+
+                        <div class="dark-terminal-input-bar">
+                            <span class="t-p">dark@terminal:~$</span>
+                            <input type="text" class="dark-terminal-input" id="terminal-input" placeholder="Type a command (e.g. help, stack, bots, games, contact)..." autocomplete="off">
+                        </div>
+
+                        <div class="dark-terminal-chips">
+                            <span style="color:var(--text-muted);">Suggestions:</span>
+                            <span class="t-chip" data-cmd="help">help</span>
+                            <span class="t-chip" data-cmd="stack">stack</span>
+                            <span class="t-chip" data-cmd="bots">bots</span>
+                            <span class="t-chip" data-cmd="games">games</span>
+                            <span class="t-chip" data-cmd="software">software</span>
+                            <span class="t-chip" data-cmd="contact">contact</span>
+                            <span class="t-chip" data-cmd="clear">clear</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             05 / COMMISSIONS (باقات العمل)
+             =================================================================== -->
+        <section class="section" id="pricingScroll">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-index">05 / COMMISSIONS</div>
+                    <h2 class="section-title" data-i18n="secPricingTitle">باقات واضحة لتنفيذ طلبك البرمجي</h2>
+                    <p class="section-desc" data-i18n="secPricingDesc">
+                        خيارات مرنة لتطوير البوتات، الألعاب، والتطبيقات المخصصة مع التزام صارم بالجودة والوقت.
+                    </p>
+                </div>
+
+                <div class="pricing-lux-grid">
+                    <div class="pricing-lux-card">
+                        <div class="pricing-tier-name" data-i18n="tier1Name">باقة بوت ديسكورد مخصص</div>
+                        <div class="pricing-tier-desc" data-i18n="tier1Desc">مثالي للمجتمعات وسيرفرات الألعاب التي تتطلب حماية وإدارة أو صوتيات واقتصاد.</div>
+                        <div class="pricing-list-lux">
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier1Row1">أوامر Slash مخصصة غير محدودة</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier1Row2">حماية كاملة من السبام ومكافحة الريد</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier1Row3">قواعد بيانات وتخزين تلقائي</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier1Row4">تسليم السورس كود وطريقة التشغيل</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier1Row5">دعم فني وتحديثات لمدة 30 يوم</span></div>
+                        </div>
+                        <a href="#contactScroll" class="btn btn-ghost">
+                            <span data-i18n="tier1Btn">طلب الباقة الآن</span>
+                        </a>
+                    </div>
+
+                    <div class="pricing-lux-card featured">
+                        <div class="pricing-tier-name" data-i18n="tier2Name">باقة لعبة / مود مخصص ⭐</div>
+                        <div class="pricing-tier-desc" data-i18n="tier2Desc">تطوير لعبة مستقلة 2D/3D كاملة أو مودات وأنظمة فيزياء مخصصة لمحركات الألعاب.</div>
+                        <div class="pricing-list-lux">
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier2Row1">بناء ميكانيكيات اللعبة والفيزياء</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier2Row2">واجهات مستخدم وقوائم تفاعلية</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier2Row3">ذكاء اصطناعي للأعداء والمراحل</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier2Row4">تصدير لجميع المنصات (PC / Mobile)</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier2Row5">دعم وتطوير شامل بعد الإطلاق</span></div>
+                        </div>
+                        <a href="#contactScroll" class="btn btn-white">
+                            <span data-i18n="tier2Btn">ابدأ تطوير لعبتك</span>
+                        </a>
+                    </div>
+
+                    <div class="pricing-lux-card">
+                        <div class="pricing-tier-name" data-i18n="tier3Name">باقة البرامج والأنظمة المتقدمة</div>
+                        <div class="pricing-tier-desc" data-i18n="tier3Desc">بناء برامج سطح مكتب متطورة، أدوات أتمتة وذكاء اصطناعي، أو أنظمة ويب ضخمة.</div>
+                        <div class="pricing-list-lux">
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier3Row1">تطبيق فائق السرعة والأداء (C++/C#)</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier3Row2">واجهة مستخدم عصرية بتصميم داكن فخم</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier3Row3">تكامل مع السيرفرات والـ APIs</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier3Row4">حماية وتشفير متقدم للكود</span></div>
+                            <div class="pricing-row-lux"><i>✔</i> <span data-i18n="tier3Row5">ضمان استقرار وصيانة ممتدة</span></div>
+                        </div>
+                        <a href="#contactScroll" class="btn btn-ghost">
+                            <span data-i18n="tier3Btn">طلب نظام مخصص</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================================================================
+             06 / CONTACT (تواصل مباشر وسريع)
+             =================================================================== -->
+        <section class="section" id="contactScroll">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-index">06 / GET IN TOUCH</div>
+                    <h2 class="section-title" data-i18n="secContactTitle">جاهز للبدء في مشروعك؟</h2>
+                    <p class="section-desc" data-i18n="secContactDesc">
+                        تواصل معي مباشرة عبر النموذج أو عبر ديسكورد لمناقشة فكرة مشروعك والبدء فوراً.
+                    </p>
+                </div>
+
+                <div class="contact-lux-split">
+                    <div class="contact-meta-cards">
+                        <div class="contact-box-item">
+                            <div class="contact-icon-lux">
+                                <svg viewBox="0 0 24 24"><path d="M20.3 4.4A19.6 19.6 0 0015.4 3a13.3 13.3 0 00-.6 1.3 18.2 18.2 0 00-5.6 0A13.3 13.3 0 008.6 3a19.5 19.5 0 00-4.9 1.4C1.2 8.2.5 13.2.9 18.2A19.7 19.7 0 007 21c.5-.7 1-1.4 1.4-2.2a12.8 12.8 0 01-2-1c.2-.1.3-.3.5-.4a14 14 0 0010.2 0c.2.1.3.3.5.4a12.8 12.8 0 01-2 1c.4.8.9 1.5 1.4 2.2a19.7 19.7 0 006.1-2.8c.5-5.7-.8-10.6-2.8-13.8zM8.5 15.3c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1zm7 0c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1z"/></svg>
+                            </div>
+                            <div style="flex-grow:1;">
+                                <div class="contact-label-lux" data-i18n="contactBoxDiscord">حساب ديسكورد المباشر</div>
+                                <div class="contact-val-lux">dark_dev#0001</div>
+                            </div>
+                            <button class="btn btn-ghost copy-discord-tag" style="padding:8px 16px; font-size:0.8rem;">
+                                <span data-i18n="contactBtnCopy">نسخ الحساب</span>
+                            </button>
+                        </div>
+
+                        <div class="contact-box-item">
+                            <div class="contact-icon-lux">
+                                <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                            </div>
+                            <div>
+                                <div class="contact-label-lux" data-i18n="contactBoxEmail">البريد الإلكتروني للعمل</div>
+                                <div class="contact-val-lux">dark.programmer.dev@gmail.com</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-box-item">
+                            <div class="contact-icon-lux">
+                                <span class="status-dot"></span>
+                            </div>
+                            <div>
+                                <div class="contact-label-lux" data-i18n="contactBoxStatus">حالة التواجد الحالية</div>
+                                <div class="contact-val-lux" style="color:#10b981;">Online &amp; Available for Work</div>
+                            </div>
+                        </div>
+
+                        <div class="contact-box-item">
+                            <div class="contact-icon-lux">
+                                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                            </div>
+                            <div>
+                                <div class="contact-label-lux" data-i18n="contactBoxTimezone">المنطقة الزمنية وسرعة الرد</div>
+                                <div class="contact-val-lux" data-i18n="contactTimezoneVal">UTC+3 (الرد خلال دقائق معدودة)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-lux">
+                        <form id="contact-form">
+                            <div class="field-lux">
+                                <label class="label-lux" data-i18n="formNameLabel">الاسم أو اللقب</label>
+                                <input type="text" class="input-lux" placeholder="اكتب اسمك أو يوزرك..." data-i18n-ph="formNamePh" required>
+                            </div>
+
+                            <div class="field-lux">
+                                <label class="label-lux" data-i18n="formContactLabel">حساب ديسكورد أو البريد الإلكتروني</label>
+                                <input type="text" class="input-lux" placeholder="user#0001 أو email@domain.com..." data-i18n-ph="formContactPh" required>
+                            </div>
+
+                            <div class="field-lux">
+                                <label class="label-lux" data-i18n="formTypeLabel">نوع المشروع</label>
+                                <select class="input-lux" style="background:#050609;" required>
+                                    <option value="" disabled selected data-i18n="formTypePh">اختر نوع المشروع...</option>
+                                    <option value="bot" data-i18n="optBot">بوت ديسكورد مخصص (Discord Bot)</option>
+                                    <option value="game" data-i18n="optGame">تطوير لعبة أو مود (Game / Mod)</option>
+                                    <option value="software" data-i18n="optSoftware">برنامج مكتبي أو نظام (Software / Tool)</option>
+                                    <option value="web" data-i18n="optWeb">موقع أو تطبيق ويب (Full-Stack Web)</option>
+                                    <option value="ai" data-i18n="optAi">أتمتة أو ذكاء اصطناعي (AI &amp; Automation)</option>
+                                    <option value="other" data-i18n="optOther">استشارة برمجية / أخرى</option>
+                                </select>
+                            </div>
+
+                            <div class="field-lux">
+                                <label class="label-lux" data-i18n="formDescLabel">تفاصيل المشروع والمتطلبات</label>
+                                <textarea class="textarea-lux" placeholder="اشرح تفاصيل وفكرة المشروع، واللغات المفضلة إن وجدت..." data-i18n-ph="formDescPh" required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-white" style="width:100%; padding:16px;">
+                                <span data-i18n="formSubmit">إرسال الرسالة لدارك</span>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-lux">
+        <div class="container">
+            <div class="footer-row-top">
+                <a href="#" class="brand-logo">
+                    <div class="dot"></div>
+                    <span>DARK</span>
+                </a>
+
+                <div class="footer-socials-lux">
+                    <!-- Discord -->
+                    <button class="social-link-lux copy-discord-tag" title="Discord">
+                        <svg viewBox="0 0 24 24"><path d="M20.3 4.4A19.6 19.6 0 0015.4 3a13.3 13.3 0 00-.6 1.3 18.2 18.2 0 00-5.6 0A13.3 13.3 0 008.6 3a19.5 19.5 0 00-4.9 1.4C1.2 8.2.5 13.2.9 18.2A19.7 19.7 0 007 21c.5-.7 1-1.4 1.4-2.2a12.8 12.8 0 01-2-1c.2-.1.3-.3.5-.4a14 14 0 0010.2 0c.2.1.3.3.5.4a12.8 12.8 0 01-2 1c.4.8.9 1.5 1.4 2.2a19.7 19.7 0 006.1-2.8c.5-5.7-.8-10.6-2.8-13.8zM8.5 15.3c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1zm7 0c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1z"/></svg>
+                    </button>
+                    <!-- GitHub -->
+                    <a href="https://github.com" target="_blank" rel="noopener" class="social-link-lux" title="GitHub">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+                    </a>
+                    <!-- Telegram -->
+                    <a href="https://t.me" target="_blank" rel="noopener" class="social-link-lux" title="Telegram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.15.27-.01.06.01.24 0 .37z"/></svg>
+                    </a>
+                    <!-- Email -->
+                    <a href="mailto:dark.programmer.dev@gmail.com" class="social-link-lux" title="Email">
+                        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-row-bottom">
+                <div data-i18n="footerRights">© 2026 DARK. All Rights Reserved.</div>
+                <div style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);" data-i18n="footerTag">
+                    ENGINEERED IN PURE BLACK &amp; OBSIDIAN
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Circular Progress Scroll Back To Top (Davies Signature) -->
+    <button id="goTop" class="go-top-btn" aria-label="Back to Top">
+        <svg class="scroll-progress-svg" viewBox="0 0 60 60">
+            <circle class="scroll-progress-circle" cx="30" cy="30" r="25"></circle>
+        </svg>
+        <span>▲</span>
+    </button>
+
+    <!-- Project Detail Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-content-box">
+            <button class="modal-close-btn" id="modal-close">✕</button>
+            <div id="modal-body-content"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 360" width="600" height="360">
+  <defs>
+    <linearGradient id="bgL" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c12" />
+      <stop offset="100%" stop-color="#020305" />
+    </linearGradient>
+    <linearGradient id="shG" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="100%" stop-color="#71717a" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="360" fill="url(#bgL)"/>
+  
+  <!-- Subtle Grid Lines -->
+  <path d="M 0 90 L 600 90 M 0 180 L 600 180 M 0 270 L 600 270" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+  <path d="M 150 0 L 150 360 M 300 0 L 300 360 M 450 0 L 450 360" stroke="rgba(255,255,255,0.03)" stroke-width="1" />
+
+  <!-- High-End Minimalist Shield Graphic -->
+  <path d="M 300 70 L 410 110 C 410 220, 300 275, 300 275 C 300 275, 190 220, 190 110 Z" fill="#0c0e16" stroke="url(#shG)" stroke-width="2.5" />
+  
+  <!-- Bot Minimalist Monogram -->
+  <rect x="255" y="135" width="90" height="65" rx="14" fill="#040508" stroke="#ffffff" stroke-width="1.5" />
+  <circle cx="280" cy="165" r="5" fill="#ffffff" />
+  <circle cx="320" cy="165" r="5" fill="#ffffff" />
+  
+  <!-- Sleek Status Chips -->
+  <rect x="50" y="50" width="130" height="34" rx="17" fill="#0e1017" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+  <text x="65" y="72" font-family="'JetBrains Mono', monospace" font-size="11" fill="#ffffff" font-weight="600">● ANTI-NUKE 99%</text>
+
+  <rect x="420" y="270" width="130" height="34" rx="17" fill="#0e1017" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+  <text x="435" y="292" font-family="'JetBrains Mono', monospace" font-size="11" fill="#a1a1aa" font-weight="600">⚡ 150+ GUILDS</text>
+
+  <text x="300" y="325" font-family="'Syne', 'Alexandria', sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="4">DARKGUARD PRO // SECURITY BOT</text>
+</svg>
