@@ -612,15 +612,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const webhookUrl = 'https://discord.com/api/webhooks/1541230405947228311/GHz_mPnravMNxigsFSyEmA_coSvRsGyazBMXEWqeHHVsSoE_8GsYEGppdf-Ckzqnotha';
 
+            const formattedDescription = 
+`# ⚡ طلب مشروع جديد (NEW COMMISSION)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### 👤 اسم أو لقب العميل:
+> **${name}**
+
+### 📫 وسيلة التواصل (اضغط للنسخ مباشرة):
+\`${contact}\`
+
+### 🎯 نوع المشروع:
+> **${projectType}**
+
+### 📝 تفاصيل ومتطلبات المشروع:
+\`\`\`yaml
+${desc}
+\`\`\``;
+
             const discordPayload = {
                 username: 'DARK Dev System',
                 embeds: [
                     {
-                        title: '⚡ طلب مشروع جديد | New Project Commission',
-                        color: 0xffffff, // Luxury Pure White / Silver
-                        description: `**👤 اسم العميل:** ${name}\n**📫 وسيلة التواصل:** \`${contact}\`\n**🎯 نوع المشروع:** **${projectType}**\n\n**📝 تفاصيل ومتطلبات المشروع:**\n${desc}`,
+                        color: 0x000000, // Pure Obsidian Luxury Black
+                        description: formattedDescription,
                         footer: {
-                            text: 'DARK PORTFOLIO NOTIFICATIONS • 2026'
+                            text: 'DARK LUXURY PORTFOLIO SYSTEM • 2026'
                         },
                         timestamp: new Date().toISOString()
                     }
