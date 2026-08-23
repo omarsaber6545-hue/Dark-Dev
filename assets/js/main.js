@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'contact': () => `
             <div class="t-green">[📫] DIRECT CHANNELS:</div>
             <div class="t-silver">▪ Discord: <b style="color:#ffffff">rip_luufy25100</b></div>
-            <div class="t-silver">▪ Email: <b style="color:#ffffff">dark.programmer.dev@gmail.com</b></div>
+            <div class="t-silver">▪ Email: <b style="color:#ffffff">omarsaber6545@gmail.com</b></div>
             <div class="t-silver">▪ GitHub: <b style="color:#ffffff">github.com/omarsaber6545-hue</b></div>
         `,
         'clear': () => 'CLEAR_ACTION'
