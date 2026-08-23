@@ -174,9 +174,9 @@ document.addEventListener('DOMContentLoaded', () => {
         `,
         'contact': () => `
             <div class="t-green">[📫] DIRECT CHANNELS:</div>
-            <div class="t-silver">▪ Discord: <b style="color:#ffffff">dark_dev#0001</b></div>
+            <div class="t-silver">▪ Discord: <b style="color:#ffffff">rip_luufy25100</b></div>
             <div class="t-silver">▪ Email: <b style="color:#ffffff">dark.programmer.dev@gmail.com</b></div>
-            <div class="t-silver">▪ GitHub: <b style="color:#ffffff">github.com/dark-polyglot</b></div>
+            <div class="t-silver">▪ GitHub: <b style="color:#ffffff">github.com/omarsaber6545-hue</b></div>
         `,
         'clear': () => 'CLEAR_ACTION'
     };
@@ -577,9 +577,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.addEventListener('click', (e) => {
         if (e.target.closest('.copy-discord-tag')) {
-            const discordTag = 'dark_dev#0001';
+            const discordTag = 'rip_luufy25100';
             navigator.clipboard.writeText(discordTag).then(() => {
-                showToast(`Discord Handle Copied: ${discordTag}`);
+                showToast(currentLang === 'ar' ? `تم نسخ حساب ديسكورد: ${discordTag}` : `Discord Tag Copied: ${discordTag}`);
             }).catch(() => {
                 showToast(`Discord: ${discordTag}`);
             });
