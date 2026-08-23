@@ -614,15 +614,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const discordPayload = {
                 username: 'DARK Dev System',
-                avatar_url: 'https://raw.githubusercontent.com/omarsaber6545-hue/Dark-Dev/main/assets/images/favicon.svg',
                 embeds: [
                     {
-                        author: {
-                            name: '⚡ NEW PROJECT COMMISSION | طلب مشروع جديد',
-                            icon_url: 'https://raw.githubusercontent.com/omarsaber6545-hue/Dark-Dev/main/assets/images/favicon.svg'
-                        },
-                        description: `> **👤 العميل:** **${name}**\n> **📫 وسيلة التواصل:** \`${contact}\`\n> **🎯 نوع المشروع:** **${projectType}**\n\n**📝 تفاصيل ومتطلبات المشروع:**\n>>> ${desc}`,
-                        color: 0x2b2d31,
+                        title: '⚡ طلب مشروع جديد | New Project Commission',
+                        color: 0xffffff, // Luxury Pure White / Silver
+                        description: `**👤 اسم العميل:** ${name}\n**📫 وسيلة التواصل:** \`${contact}\`\n**🎯 نوع المشروع:** **${projectType}**\n\n**📝 تفاصيل ومتطلبات المشروع:**\n${desc}`,
                         footer: {
                             text: 'DARK PORTFOLIO NOTIFICATIONS • 2026'
                         },
