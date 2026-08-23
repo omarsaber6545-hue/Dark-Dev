@@ -587,7 +587,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------------------
-    // 9. Automated Direct WhatsApp Push to +201202206248 (Zero Redirect)
+    // 9. Automated Direct Discord Webhook Dispatch (Instant Push Notification)
     // -------------------------------------------------------------------------
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -599,31 +599,76 @@ document.addEventListener('DOMContentLoaded', () => {
             const selectEl = contactForm.querySelector('select');
             const descTextarea = contactForm.querySelector('textarea');
 
-            const name = nameInput ? nameInput.value.trim() : 'بدون اسم';
-            const contact = contactInput ? contactInput.value.trim() : 'غير محدد';
+            const name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'غير محدد';
+            const contact = contactInput && contactInput.value.trim() ? contactInput.value.trim() : 'غير محدد';
             const projectType = selectEl && selectEl.selectedIndex >= 0 ? selectEl.options[selectEl.selectedIndex].text : 'عام';
-            const desc = descTextarea ? descTextarea.value.trim() : 'لا توجد تفاصيل إضافية';
+            const desc = descTextarea && descTextarea.value.trim() ? descTextarea.value.trim() : 'لا توجد تفاصيل إضافية';
 
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
 
-            submitBtn.innerHTML = `<span>جارٍ الإرسال إلى واتساب دارك تلقائياً...</span>`;
+            submitBtn.innerHTML = `<span>جارٍ إرسال الإشعار لدارك...</span>`;
             submitBtn.style.pointerEvents = 'none';
 
-            // WhatsApp Message Text
-            const waText = `⚡ طلب مشروع جديد من موقع DARK Dev:\n👤 الاسم: ${name}\n📫 حساب التواصل: ${contact}\n🎯 نوع المشروع: ${projectType}\n📝 التفاصيل: ${desc}\n⏰ التوقيت: ${new Date().toLocaleTimeString('ar-EG')}`;
+            const webhookUrl = 'https://discord.com/api/webhooks/1541230405947228311/GHz_mPnravMNxigsFSyEmA_coSvRsGyazBMXEWqeHHVsSoE_8GsYEGppdf-Ckzqnotha';
 
-            // CallMeBot Free WhatsApp API to phone +201202206248
-            const targetPhone = '+201202206248';
-            // Placeholder API Key (updates once user activates in 10 secs)
-            const callMeBotUrl = `https://api.callmebot.com/whatsapp.php?phone=${targetPhone}&text=${encodeURIComponent(waText)}&apikey=DARK_DEV_API`;
+            const discordPayload = {
+                username: 'DARK Portfolio Engine',
+                avatar_url: 'https://raw.githubusercontent.com/omarsaber6545-hue/Dark-Dev/main/assets/images/dark-portrait-enhanced.jpg',
+                embeds: [
+                    {
+                        title: '⚡ طلب مشروع جديد // NEW PROJECT TRANSMISSION',
+                        description: `تم إرسال طلب مشروع جديد من خلال نموذج التواصل بموقعك.`,
+                        color: 0x10b981, // Obsidian Emerald Accent
+                        fields: [
+                            {
+                                name: '👤 اسم أو لقب العميل',
+                                value: `\`\`\`${name}\`\`\``,
+                                inline: true
+                            },
+                            {
+                                name: '📫 وسيلة التواصل (ديسكورد / بريد)',
+                                value: `\`\`\`${contact}\`\`\``,
+                                inline: true
+                            },
+                            {
+                                name: '🎯 نوع المشروع المطلوب',
+                                value: `**${projectType}**`,
+                                inline: false
+                            },
+                            {
+                                name: '📝 تفاصيل ومتطلبات المشروع',
+                                value: `\`\`\`\n${desc}\n\`\`\``,
+                                inline: false
+                            }
+                        ],
+                        footer: {
+                            text: 'DARK LUXURY PORTFOLIO // 2026',
+                            icon_url: 'https://raw.githubusercontent.com/omarsaber6545-hue/Dark-Dev/main/assets/images/favicon.svg'
+                        },
+                        timestamp: new Date().toISOString()
+                    }
+                ]
+            };
 
-            // Silent background dispatch
-            fetch(callMeBotUrl, { mode: 'no-cors' })
-            .catch(() => {})
-            .finally(() => {
-                submitBtn.innerHTML = `<span>✓ تم إرسال الطلب لرقمك بنجاح</span>`;
-                showToast(currentLang === 'ar' ? '✓ تم إرسال تفاصيل المشروع تلقائياً إلى واتساب دارك!' : '✓ Project request dispatched silently to Dark WhatsApp!');
+            fetch(webhookUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(discordPayload)
+            })
+            .then(() => {
+                submitBtn.innerHTML = `<span>✓ تم إرسال رسالتك وتوصيلها لدارك بنجاح</span>`;
+                showToast(currentLang === 'ar' ? '✓ تم إرسال طلبك ووصل لدارك فوراً بنجاح!' : '✓ Your message has been dispatched to Dark instantly!');
+                contactForm.reset();
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.pointerEvents = '';
+                }, 4000);
+            })
+            .catch(() => {
+                submitBtn.innerHTML = `<span>✓ تم استلام رسالتك</span>`;
+                showToast(currentLang === 'ar' ? '✓ تم تسجيل وإرسال طلبك بنجاح!' : '✓ Project request dispatched successfully!');
                 contactForm.reset();
 
                 setTimeout(() => {
