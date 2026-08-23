@@ -587,28 +587,59 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------------------
-    // 9. Contact Form Simulation
+    // 9. Automated Direct WhatsApp Transmission (01202206248)
     // -------------------------------------------------------------------------
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
+
+            const nameInput = contactForm.querySelector('input[data-i18n-ph="formNamePh"]');
+            const contactInput = contactForm.querySelector('input[data-i18n-ph="formContactPh"]');
+            const selectEl = contactForm.querySelector('select');
+            const descTextarea = contactForm.querySelector('textarea');
+
+            const name = nameInput ? nameInput.value.trim() : 'بدون اسم';
+            const contact = contactInput ? contactInput.value.trim() : 'غير محدد';
+            const projectType = selectEl && selectEl.selectedIndex >= 0 ? selectEl.options[selectEl.selectedIndex].text : 'عام';
+            const desc = descTextarea ? descTextarea.value.trim() : 'لا توجد تفاصيل إضافية';
+
+            const phone = '201202206248'; // Developer Official WhatsApp
+
+            // Build beautifully structured WhatsApp Message
+            const message = 
+`⚡ *طلب مشروع جديد من موقع DARK Dev*
+━━━━━━━━━━━━━━━━━━━━
+👤 *الاسم / اللقب:* ${name}
+📫 *وسيلة التواصل:* ${contact}
+🎯 *نوع المشروع:* ${projectType}
+📝 *تفاصيل ومتطلبات المشروع:*
+${desc}
+━━━━━━━━━━━━━━━━━━━━
+⏰ *التوقيت:* ${new Date().toLocaleString('ar-EG', { timeZone: 'Africa/Cairo' })}`;
+
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
 
-            submitBtn.innerHTML = `<span>Processing Transmission...</span>`;
+            submitBtn.innerHTML = `<span>جارٍ الإرسال التلقائي...</span>`;
             submitBtn.style.pointerEvents = 'none';
 
+            // Construct WhatsApp direct transmission link
+            const waUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
+
+            // Automatically open WhatsApp with pre-filled message
+            window.open(waUrl, '_blank');
+
             setTimeout(() => {
-                submitBtn.innerHTML = `<span>✓ Transmission Sent</span>`;
-                showToast('Thank you. Dark will respond via Discord/Email shortly.');
+                submitBtn.innerHTML = `<span>✓ تم التحويل والإرسال</span>`;
+                showToast(currentLang === 'ar' ? 'تم تجهيز وإرسال تفاصيل طلبك مباشرة على واتساب دارك!' : 'Your project details have been transmitted to Dark via WhatsApp!');
                 contactForm.reset();
 
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.style.pointerEvents = '';
-                }, 4000);
-            }, 900);
+                }, 3500);
+            }, 600);
         });
     }
 
