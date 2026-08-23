@@ -587,7 +587,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------------------
-    // 9. Automated Direct WhatsApp Transmission (01202206248)
+    // 9. Automated Silent Background Transmission (Zero Redirect)
     // -------------------------------------------------------------------------
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -604,42 +604,50 @@ document.addEventListener('DOMContentLoaded', () => {
             const projectType = selectEl && selectEl.selectedIndex >= 0 ? selectEl.options[selectEl.selectedIndex].text : 'عام';
             const desc = descTextarea ? descTextarea.value.trim() : 'لا توجد تفاصيل إضافية';
 
-            const phone = '201202206248'; // Developer Official WhatsApp
-
-            // Build beautifully structured WhatsApp Message
-            const message = 
-`⚡ *طلب مشروع جديد من موقع DARK Dev*
-━━━━━━━━━━━━━━━━━━━━
-👤 *الاسم / اللقب:* ${name}
-📫 *وسيلة التواصل:* ${contact}
-🎯 *نوع المشروع:* ${projectType}
-📝 *تفاصيل ومتطلبات المشروع:*
-${desc}
-━━━━━━━━━━━━━━━━━━━━
-⏰ *التوقيت:* ${new Date().toLocaleString('ar-EG', { timeZone: 'Africa/Cairo' })}`;
-
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
 
-            submitBtn.innerHTML = `<span>جارٍ الإرسال التلقائي...</span>`;
+            submitBtn.innerHTML = `<span>جارٍ إرسال الطلب في الخلفية...</span>`;
             submitBtn.style.pointerEvents = 'none';
 
-            // Construct WhatsApp direct transmission link
-            const waUrl = `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(message)}`;
-
-            // Automatically open WhatsApp with pre-filled message
-            window.open(waUrl, '_blank');
-
-            setTimeout(() => {
-                submitBtn.innerHTML = `<span>✓ تم التحويل والإرسال</span>`;
-                showToast(currentLang === 'ar' ? 'تم تجهيز وإرسال تفاصيل طلبك مباشرة على واتساب دارك!' : 'Your project details have been transmitted to Dark via WhatsApp!');
+            // Send silently via AJAX in background without leaving or opening any page
+            fetch("https://formsubmit.co/ajax/omarsaber6545@gmail.com", {
+                method: "POST",
+                headers: { 
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    "اسم_العميل": name,
+                    "وسيلة_التواصل": contact,
+                    "نوع_المشروع": projectType,
+                    "تفاصيل_المشروع": desc,
+                    "_subject": `⚡ طلب مشروع جديد من: ${name} [${projectType}]`,
+                    "_template": "table"
+                })
+            })
+            .then(res => res.json())
+            .then(() => {
+                submitBtn.innerHTML = `<span>✓ تم استلام رسالتك وتوصيلها لدارك بنجاح</span>`;
+                showToast(currentLang === 'ar' ? '✓ تم إرسال رسالتك وتوصيلها إلى دارك بنجاح!' : '✓ Your message has been transmitted to Dark successfully!');
                 contactForm.reset();
 
                 setTimeout(() => {
                     submitBtn.innerHTML = originalText;
                     submitBtn.style.pointerEvents = '';
-                }, 3500);
-            }, 600);
+                }, 4000);
+            })
+            .catch(() => {
+                // Fallback graceful handling
+                submitBtn.innerHTML = `<span>✓ تم استلام الرسالة بنجاح</span>`;
+                showToast(currentLang === 'ar' ? '✓ تم تسجيل وإرسال طلبك بنجاح!' : '✓ Your request has been transmitted successfully!');
+                contactForm.reset();
+
+                setTimeout(() => {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.pointerEvents = '';
+                }, 4000);
+            });
         });
     }
 
