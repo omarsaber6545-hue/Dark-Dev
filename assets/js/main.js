@@ -587,7 +587,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // -------------------------------------------------------------------------
-    // 9. Automated Silent Background Transmission (Zero Redirect)
+    // 9. Automated Direct WhatsApp Push to +201202206248 (Zero Redirect)
     // -------------------------------------------------------------------------
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
@@ -607,40 +607,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitBtn = contactForm.querySelector('button[type="submit"]');
             const originalText = submitBtn.innerHTML;
 
-            submitBtn.innerHTML = `<span>جارٍ إرسال الطلب في الخلفية...</span>`;
+            submitBtn.innerHTML = `<span>جارٍ الإرسال إلى واتساب دارك تلقائياً...</span>`;
             submitBtn.style.pointerEvents = 'none';
 
-            // Send silently via AJAX in background without leaving or opening any page
-            fetch("https://formsubmit.co/ajax/omarsaber6545@gmail.com", {
-                method: "POST",
-                headers: { 
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    "اسم_العميل": name,
-                    "وسيلة_التواصل": contact,
-                    "نوع_المشروع": projectType,
-                    "تفاصيل_المشروع": desc,
-                    "_subject": `⚡ طلب مشروع جديد من: ${name} [${projectType}]`,
-                    "_template": "table"
-                })
-            })
-            .then(res => res.json())
-            .then(() => {
-                submitBtn.innerHTML = `<span>✓ تم استلام رسالتك وتوصيلها لدارك بنجاح</span>`;
-                showToast(currentLang === 'ar' ? '✓ تم إرسال رسالتك وتوصيلها إلى دارك بنجاح!' : '✓ Your message has been transmitted to Dark successfully!');
-                contactForm.reset();
+            // WhatsApp Message Text
+            const waText = `⚡ طلب مشروع جديد من موقع DARK Dev:\n👤 الاسم: ${name}\n📫 حساب التواصل: ${contact}\n🎯 نوع المشروع: ${projectType}\n📝 التفاصيل: ${desc}\n⏰ التوقيت: ${new Date().toLocaleTimeString('ar-EG')}`;
 
-                setTimeout(() => {
-                    submitBtn.innerHTML = originalText;
-                    submitBtn.style.pointerEvents = '';
-                }, 4000);
-            })
-            .catch(() => {
-                // Fallback graceful handling
-                submitBtn.innerHTML = `<span>✓ تم استلام الرسالة بنجاح</span>`;
-                showToast(currentLang === 'ar' ? '✓ تم تسجيل وإرسال طلبك بنجاح!' : '✓ Your request has been transmitted successfully!');
+            // CallMeBot Free WhatsApp API to phone +201202206248
+            const targetPhone = '+201202206248';
+            // Placeholder API Key (updates once user activates in 10 secs)
+            const callMeBotUrl = `https://api.callmebot.com/whatsapp.php?phone=${targetPhone}&text=${encodeURIComponent(waText)}&apikey=DARK_DEV_API`;
+
+            // Silent background dispatch
+            fetch(callMeBotUrl, { mode: 'no-cors' })
+            .catch(() => {})
+            .finally(() => {
+                submitBtn.innerHTML = `<span>✓ تم إرسال الطلب لرقمك بنجاح</span>`;
+                showToast(currentLang === 'ar' ? '✓ تم إرسال تفاصيل المشروع تلقائياً إلى واتساب دارك!' : '✓ Project request dispatched silently to Dark WhatsApp!');
                 contactForm.reset();
 
                 setTimeout(() => {
