@@ -633,6 +633,7 @@ ${desc}
 
             const discordPayload = {
                 username: 'DARK Dev System',
+                content: '<@1512205578015871048>',
                 embeds: [
                     {
                         color: 0x000000, // Obsidian Luxury Black
