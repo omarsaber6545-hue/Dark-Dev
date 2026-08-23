@@ -613,38 +613,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const webhookUrl = 'https://discord.com/api/webhooks/1541230405947228311/GHz_mPnravMNxigsFSyEmA_coSvRsGyazBMXEWqeHHVsSoE_8GsYEGppdf-Ckzqnotha';
 
             const discordPayload = {
-                username: 'DARK Portfolio Engine',
-                avatar_url: 'https://raw.githubusercontent.com/omarsaber6545-hue/Dark-Dev/main/assets/images/dark-portrait-enhanced.jpg',
+                username: 'DARK Dev System',
+                avatar_url: 'https://raw.githubusercontent.com/omarsaber6545-hue/Dark-Dev/main/assets/images/favicon.svg',
                 embeds: [
                     {
-                        title: '⚡ طلب مشروع جديد // NEW PROJECT TRANSMISSION',
-                        description: `تم إرسال طلب مشروع جديد من خلال نموذج التواصل بموقعك.`,
-                        color: 0x10b981, // Obsidian Emerald Accent
-                        fields: [
-                            {
-                                name: '👤 اسم أو لقب العميل',
-                                value: `\`\`\`${name}\`\`\``,
-                                inline: true
-                            },
-                            {
-                                name: '📫 وسيلة التواصل (ديسكورد / بريد)',
-                                value: `\`\`\`${contact}\`\`\``,
-                                inline: true
-                            },
-                            {
-                                name: '🎯 نوع المشروع المطلوب',
-                                value: `**${projectType}**`,
-                                inline: false
-                            },
-                            {
-                                name: '📝 تفاصيل ومتطلبات المشروع',
-                                value: `\`\`\`\n${desc}\n\`\`\``,
-                                inline: false
-                            }
-                        ],
-                        footer: {
-                            text: 'DARK LUXURY PORTFOLIO // 2026',
+                        author: {
+                            name: '⚡ NEW PROJECT COMMISSION | طلب مشروع جديد',
                             icon_url: 'https://raw.githubusercontent.com/omarsaber6545-hue/Dark-Dev/main/assets/images/favicon.svg'
+                        },
+                        description: `> **👤 العميل:** **${name}**\n> **📫 وسيلة التواصل:** \`${contact}\`\n> **🎯 نوع المشروع:** **${projectType}**\n\n**📝 تفاصيل ومتطلبات المشروع:**\n>>> ${desc}`,
+                        color: 0x2b2d31,
+                        footer: {
+                            text: 'DARK PORTFOLIO NOTIFICATIONS • 2026'
                         },
                         timestamp: new Date().toISOString()
                     }
