@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                         </button>
                     </form>
-                    <div class="dark-chat-footer-hint">SOCKET.IO & DISCORD BIDIRECTIONAL RELAY</div>
+                    <div class="dark-chat-footer-hint">⚡ POWERED BY DARK DEV • 2026</div>
                 </div>
             </div>
         `;
