@@ -629,6 +629,26 @@
     font-family: var(--font-mono);
 }
 
+.dark-chat-reload-warning {
+    font-size: 0.68rem;
+    color: #fbbf24;
+    text-align: center;
+    font-family: var(--font-ar), sans-serif;
+    padding: 5px 8px;
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px dashed rgba(245, 158, 11, 0.25);
+    border-radius: 8px;
+    line-height: 1.35;
+}
+
+.system-card-warning {
+    display: block;
+    margin-top: 6px;
+    color: #fbbf24;
+    font-size: 0.74rem;
+    font-weight: 500;
+}
+
 /* --------------------------------------------------------------------------
    Mobile Responsive Adjustments
    -------------------------------------------------------------------------- */

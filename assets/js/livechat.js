@@ -11,12 +11,18 @@ document.addEventListener('DOMContentLoaded', () => {
     // -------------------------------------------------------------------------
     const BACKEND_URL = window.DARK_CHAT_SERVER_URL || 'http://localhost:5000';
     
-    // State
+    // Clear any previous session on page load/reload to guarantee a fresh start
+    localStorage.removeItem('dark_chat_session_id');
+    localStorage.removeItem('dark_chat_guest_name');
+    localStorage.removeItem('dark_chat_contact_info');
+    localStorage.removeItem('dark_chat_topic');
+
+    // In-memory State (Resets on every page reload)
     let socket = null;
-    let sessionId = localStorage.getItem('dark_chat_session_id') || null;
-    let guestName = localStorage.getItem('dark_chat_guest_name') || '';
-    let guestContact = localStorage.getItem('dark_chat_contact_info') || '';
-    let guestTopic = localStorage.getItem('dark_chat_topic') || '';
+    let sessionId = null;
+    let guestName = '';
+    let guestContact = '';
+    let guestTopic = '';
     let isWidgetOpen = false;
     let unreadCount = 0;
     let typingTimeout = null;
@@ -255,6 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="dark-chat-system-card">
                 <b>⚡ محادثة فورية مباشرة مع دارك</b>
                 تواصل معي هنا مباشرة؛ ستصلني رسالتك فوراً على ديسكورد وسأرد عليك لحظياً هنا داخل الموقع.
+                <span class="system-card-warning">⚠️ تنبيه: تحديث الصفحة (Reload) سيمسح المحادثة بالكامل ويبدأ من الصفر.</span>
             </div>
         `;
     }
@@ -520,6 +527,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="dark-chat-system-card">
                             <b>⚡ محادثة فورية مباشرة مع دارك</b>
                             تواصل معي هنا مباشرة؛ ستصلني رسالتك فوراً على ديسكورد وسأرد عليك لحظياً هنا داخل الموقع.
+                            <span class="system-card-warning">⚠️ تنبيه: تحديث الصفحة (Reload) سيمسح المحادثة بالكامل ويبدأ من الصفر.</span>
                         </div>
                     </div>
 
@@ -541,7 +549,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                 <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                             </button>
                         </form>
-                        <div class="dark-chat-footer-hint">⚡ POWERED BY DARK DEV • 2026</div>
+                        <div class="dark-chat-reload-warning">⚠️ إعادة تحميل الصفحة (Reload) ستمسح الشات وتبدأ من الصفر</div>
                     </div>
                 </div>
 
