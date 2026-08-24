@@ -15,9 +15,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let socket = null;
     let sessionId = localStorage.getItem('dark_chat_session_id') || null;
     let guestName = localStorage.getItem('dark_chat_guest_name') || '';
+    let guestContact = localStorage.getItem('dark_chat_contact_info') || '';
+    let guestTopic = localStorage.getItem('dark_chat_topic') || '';
     let isWidgetOpen = false;
     let unreadCount = 0;
     let typingTimeout = null;
+    let isSending = false;
 
     // -------------------------------------------------------------------------
     // DOM Elements Creation (Inject Widget HTML)
@@ -26,6 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const launcherBtn = document.getElementById('darkChatLauncher');
     const chatWidget = document.getElementById('darkChatWidget');
+    const onboardingView = document.getElementById('darkChatOnboarding');
+    const activeChatView = document.getElementById('darkChatActiveView');
+    const onboardingForm = document.getElementById('darkChatOnboardingForm');
     const chatBody = document.getElementById('darkChatBody');
     const chatInput = document.getElementById('darkChatInput');
     const chatForm = document.getElementById('darkChatForm');
@@ -33,6 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const unreadBadge = document.getElementById('darkChatUnreadBadge');
     const btnMinimize = document.getElementById('darkChatMinimize');
     const btnCloseSession = document.getElementById('darkChatCloseSession');
+
+    // -------------------------------------------------------------------------
+    // Check & Render Appropriate View (Onboarding vs Active Chat)
+    // -------------------------------------------------------------------------
+    function checkViewState() {
+        if (guestName && guestContact) {
+            if (onboardingView) onboardingView.style.display = 'none';
+            if (activeChatView) activeChatView.style.display = 'flex';
+        } else {
+            if (onboardingView) onboardingView.style.display = 'flex';
+            if (activeChatView) activeChatView.style.display = 'none';
+        }
+    }
+    checkViewState();
 
     // -------------------------------------------------------------------------
     // Web Audio Synthesizer (Subtle luxury chime for support replies)
@@ -78,7 +98,9 @@ document.addEventListener('DOMContentLoaded', () => {
         socket.on('connect', () => {
             console.log('⚡ Connected to DARK Live Chat Server:', socket.id);
             updateConnectionStatus(true);
-            initSession();
+            if (guestName && guestContact) {
+                initSession();
+            }
         });
 
         socket.on('disconnect', () => {
@@ -108,10 +130,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        // Echo for user message
+        // Echo for user message from other tabs
         socket.on('new_message', (msg) => {
             if (msg.sender === 'user') {
-                // If message is not already rendered locally
                 const existing = document.querySelector(`[data-msg-id="${msg.id}"]`);
                 if (!existing) {
                     appendMessage(msg);
@@ -143,9 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
         socket.emit('init_session', { sessionId, guestName }, (res) => {
             if (res && res.success) {
                 sessionId = res.session.id;
-                guestName = res.session.guestName;
                 localStorage.setItem('dark_chat_session_id', sessionId);
-                localStorage.setItem('dark_chat_guest_name', guestName);
 
                 // Render history
                 if (res.history && Array.isArray(res.history)) {
@@ -154,6 +173,39 @@ document.addEventListener('DOMContentLoaded', () => {
                     scrollToBottom();
                 }
             }
+        });
+    }
+
+    // -------------------------------------------------------------------------
+    // Onboarding Form Submission
+    // -------------------------------------------------------------------------
+    if (onboardingForm) {
+        onboardingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const nameVal = document.getElementById('darkChatInitName')?.value.trim();
+            const contactVal = document.getElementById('darkChatInitContact')?.value.trim();
+            const topicSelect = document.getElementById('darkChatInitTopic');
+            const topicVal = topicSelect ? topicSelect.options[topicSelect.selectedIndex].text : 'استفسار عام';
+
+            if (!nameVal || !contactVal) return;
+
+            guestName = nameVal;
+            guestContact = contactVal;
+            guestTopic = topicVal;
+
+            localStorage.setItem('dark_chat_guest_name', guestName);
+            localStorage.setItem('dark_chat_contact_info', guestContact);
+            localStorage.setItem('dark_chat_topic', guestTopic);
+
+            checkViewState();
+            initSession();
+
+            // Welcome notice in chat
+            showChatNotice(`مرحباً ${guestName}! تم توصيلك بدارك مباشرة، اكتب رسالتك الآن وستصله فوراً.`);
+            setTimeout(() => {
+                if (chatInput) chatInput.focus();
+            }, 300);
         });
     }
 
@@ -199,9 +251,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function clearMessages() {
         if (!chatBody) return;
-        const welcomeCard = chatBody.querySelector('.dark-chat-system-card');
-        chatBody.innerHTML = '';
-        if (welcomeCard) chatBody.appendChild(welcomeCard);
+        chatBody.innerHTML = `
+            <div class="dark-chat-system-card">
+                <b>⚡ محادثة فورية مباشرة مع دارك</b>
+                تواصل معي هنا مباشرة؛ ستصلني رسالتك فوراً على ديسكورد وسأرد عليك لحظياً هنا داخل الموقع.
+            </div>
+        `;
     }
 
     function scrollToBottom() {
@@ -244,8 +299,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    let isSending = false;
-
     function sendMessage() {
         if (!chatInput || isSending) return;
         const content = chatInput.value.trim();
@@ -266,12 +319,14 @@ document.addEventListener('DOMContentLoaded', () => {
             createdAt: new Date().toISOString()
         });
 
-        // Send via Socket.IO
+        // Send via Socket.IO with full guest profile
         if (socket && socket.connected) {
             socket.emit('send_message', {
                 sessionId,
                 content,
                 guestName,
+                guestContact,
+                guestTopic,
                 url: window.location.href
             }, (res) => {
                 isSending = false;
@@ -300,7 +355,12 @@ document.addEventListener('DOMContentLoaded', () => {
             updateUnreadBadge();
             scrollToBottom();
             setTimeout(() => {
-                if (chatInput) chatInput.focus();
+                if (guestName && guestContact) {
+                    if (chatInput) chatInput.focus();
+                } else {
+                    const initNameInput = document.getElementById('darkChatInitName');
+                    if (initNameInput) initNameInput.focus();
+                }
             }, 300);
         } else {
             chatWidget.classList.remove('active');
@@ -314,17 +374,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnCloseSession) {
         btnCloseSession.addEventListener('click', () => {
             const confirmMsg = document.documentElement.lang === 'en' 
-                ? 'End live chat session?' 
-                : 'هل تريد إنهاء المحادثة الحالية وبدء جلسة جديدة؟';
+                ? 'End live chat session & reset details?' 
+                : 'هل تريد إنهاء المحادثة وتغيير بياناتك لبدء جلسة جديدة؟';
             if (confirm(confirmMsg)) {
                 if (socket && socket.connected && sessionId) {
                     socket.emit('close_session', { sessionId, guestName });
                 }
                 localStorage.removeItem('dark_chat_session_id');
+                localStorage.removeItem('dark_chat_guest_name');
+                localStorage.removeItem('dark_chat_contact_info');
+                localStorage.removeItem('dark_chat_topic');
                 sessionId = null;
+                guestName = '';
+                guestContact = '';
+                guestTopic = '';
+                checkViewState();
                 clearMessages();
-                showChatNotice('تم إنهاء الجلسة. يمكنك إرسال رسالة في أي وقت لبدء محادثة جديدة.');
-                initSession();
             }
         });
     }
@@ -409,34 +474,77 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
 
-                <!-- Messages Body -->
-                <div id="darkChatBody" class="dark-chat-body">
-                    <div class="dark-chat-system-card">
-                        <b>⚡ محادثة فورية مباشرة مع دارك</b>
-                        تواصل معي هنا مباشرة؛ ستصلني رسالتك فوراً على ديسكورد وسأرد عليك لحظياً هنا داخل الموقع.
+                <!-- 1. Onboarding Pre-Chat Form View -->
+                <div id="darkChatOnboarding" class="dark-chat-onboarding-view">
+                    <div class="dark-chat-onboarding-header">
+                        <div class="onboarding-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        </div>
+                        <h3>مرحباً بك في الدعم المباشر</h3>
+                        <p>يرجى إدخال بياناتك البسيطة لنتمكن من متابعة طلبك والتواصل معك فوراً.</p>
                     </div>
-                </div>
 
-                <!-- Typing Indicator -->
-                <div id="darkChatTyping" class="dark-chat-typing-indicator">
-                    <span class="typing-label">دارك يكتب الآن</span>
-                    <div class="typing-dots">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
+                    <form id="darkChatOnboardingForm" style="display:flex; flex-direction:column; gap:12px;">
+                        <div class="dark-chat-field-group">
+                            <label>الاسم أو اللقب *</label>
+                            <input type="text" id="darkChatInitName" class="dark-chat-field-input" placeholder="اكتب اسمك أو يوزرك..." required>
+                        </div>
 
-                <!-- Footer & Input -->
-                <div class="dark-chat-footer">
-                    <form id="darkChatForm" class="dark-chat-input-form">
-                        <textarea id="darkChatInput" class="dark-chat-input" placeholder="اكتب رسالتك لدارك مباشرة..." rows="1" required></textarea>
-                        <button type="submit" class="dark-chat-btn-send" aria-label="إرسال الرسالة">
-                            <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                        <div class="dark-chat-field-group">
+                            <label>وسيلة التواصل (ديسكورد / بريد / هاتف) *</label>
+                            <input type="text" id="darkChatInitContact" class="dark-chat-field-input" placeholder="user#0001 أو email@domain.com..." required>
+                        </div>
+
+                        <div class="dark-chat-field-group">
+                            <label>نوع الاستفسار أو المشروع</label>
+                            <select id="darkChatInitTopic" class="dark-chat-field-input" style="background:#000000;">
+                                <option value="bot">بوت ديسكورد مخصص (Discord Bot)</option>
+                                <option value="game">تطوير لعبة أو مود (Game / Mod)</option>
+                                <option value="software">برنامج مكتبي أو نظام (Software / Tool)</option>
+                                <option value="web">موقع أو تطبيق ويب (Full-Stack Web)</option>
+                                <option value="other">استشارة عامة / أخرى</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="dark-chat-btn-start">
+                            <span>بدء المحادثة الفورية مع دارك</span>
+                            <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor;"><path d="M13 3L4 14h7v7l9-11h-7z"/></svg>
                         </button>
                     </form>
-                    <div class="dark-chat-footer-hint">⚡ POWERED BY DARK DEV • 2026</div>
                 </div>
+
+                <!-- 2. Active Chat View Container -->
+                <div id="darkChatActiveView" style="display:none; flex-direction:column; flex:1; overflow:hidden;">
+                    <!-- Messages Body -->
+                    <div id="darkChatBody" class="dark-chat-body">
+                        <div class="dark-chat-system-card">
+                            <b>⚡ محادثة فورية مباشرة مع دارك</b>
+                            تواصل معي هنا مباشرة؛ ستصلني رسالتك فوراً على ديسكورد وسأرد عليك لحظياً هنا داخل الموقع.
+                        </div>
+                    </div>
+
+                    <!-- Typing Indicator -->
+                    <div id="darkChatTyping" class="dark-chat-typing-indicator">
+                        <span class="typing-label">دارك يكتب الآن</span>
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <!-- Footer & Input -->
+                    <div class="dark-chat-footer">
+                        <form id="darkChatForm" class="dark-chat-input-form">
+                            <textarea id="darkChatInput" class="dark-chat-input" placeholder="اكتب رسالتك لدارك مباشرة..." rows="1" required></textarea>
+                            <button type="submit" class="dark-chat-btn-send" aria-label="إرسال الرسالة">
+                                <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                            </button>
+                        </form>
+                        <div class="dark-chat-footer-hint">⚡ POWERED BY DARK DEV • 2026</div>
+                    </div>
+                </div>
+
             </div>
         `;
         document.body.appendChild(container);

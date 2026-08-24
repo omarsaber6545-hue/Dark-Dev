@@ -44,7 +44,7 @@ function initSocketHandlers(io) {
     });
 
     // 2. Handle Visitor Message
-    socket.on('send_message', async ({ sessionId, content, guestName, url }, callback) => {
+    socket.on('send_message', async ({ sessionId, content, guestName, guestContact, guestTopic, url }, callback) => {
       try {
         const targetSessionId = sessionId || currentSessionId;
         if (!targetSessionId) {
@@ -96,6 +96,8 @@ function initSocketHandlers(io) {
             if (channel && channel.isTextBased()) {
               const embed = createGuestMessageEmbed({
                 guestName: guestName || 'زائر الموقع',
+                guestContact: guestContact || '',
+                guestTopic: guestTopic || '',
                 sessionId: targetSessionId,
                 messageId: savedMessage.id,
                 content: cleanContent,
