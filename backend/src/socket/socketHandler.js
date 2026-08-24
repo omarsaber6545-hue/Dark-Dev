@@ -79,8 +79,8 @@ function initSocketHandlers(io) {
           content: cleanContent
         });
 
-        // Broadcast to visitor's room (reflect in UI)
-        io.to(`session:${targetSessionId}`).emit('new_message', {
+        // Broadcast to any other open tabs in visitor's room
+        socket.to(`session:${targetSessionId}`).emit('new_message', {
           id: savedMessage.id,
           sessionId: targetSessionId,
           sender: 'user',

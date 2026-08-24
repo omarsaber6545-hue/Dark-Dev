@@ -244,10 +244,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    let isSending = false;
+
     function sendMessage() {
-        if (!chatInput) return;
+        if (!chatInput || isSending) return;
         const content = chatInput.value.trim();
         if (!content) return;
+
+        isSending = true;
 
         // Reset input
         chatInput.value = '';
@@ -270,6 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 guestName,
                 url: window.location.href
             }, (res) => {
+                isSending = false;
                 if (res && res.success) {
                     const tempEl = document.querySelector(`[data-msg-id="${tempId}"]`);
                     if (tempEl && res.message && res.message.id) {
@@ -278,6 +283,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         } else {
+            isSending = false;
             showChatNotice('⚠️ تعذر الاتصال بالخادم اللحظي، يرجى التأكد من تشغيل خادم الباك إند.', 'warning');
         }
     }
