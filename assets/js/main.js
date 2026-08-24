@@ -795,7 +795,7 @@ ${desc}
             matrixPoint4: 'حماية متقدمة ضد الثغرات',
             btnConsult: 'طلب استشارة أو مشروع',
             btnDiscord: 'حسابي على ديسكورد',
-            terminalIntro: 'اكتب الأوامر أو اضغط على المقترحات بالأسفل:',
+            terminalIntro: '[SYSTEM] اكتب الأوامر أو اضغط على المقترحات أدناه // Type commands below:',
 
             secPricingTitle: 'باقات واضحة لتنفيذ طلبك البرمجي',
             secPricingDesc: 'خيارات مرنة لتطوير البوتات، الألعاب، والتطبيقات المخصصة مع التزام صارم بالجودة والوقت.',
@@ -934,7 +934,7 @@ ${desc}
             matrixPoint4: 'Advanced Security & Anti-Exploit Hardening',
             btnConsult: 'REQUEST CONSULTATION',
             btnDiscord: 'MY DISCORD TAG',
-            terminalIntro: 'Type commands or click quick suggestions below:',
+            terminalIntro: '[SYSTEM] Type commands or click quick suggestions below:',
 
             secPricingTitle: 'TRANSPARENT COMMISSION PACKAGES',
             secPricingDesc: 'Flexible options for bot development, games, and bespoke software with strict deadlines and quality guarantee.',

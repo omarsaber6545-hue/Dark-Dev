@@ -562,15 +562,15 @@
                     </div>
 
                     <!-- Luxury Monochromatic Terminal -->
-                    <div class="dark-terminal-box">
+                    <div class="dark-terminal-box" dir="ltr">
                         <div class="dark-terminal-top">
                             <div class="dark-terminal-dots">
-                                <div class="terminal-dot"></div>
-                                <div class="terminal-dot"></div>
-                                <div class="terminal-dot"></div>
+                                <div class="terminal-dot dot-red"></div>
+                                <div class="terminal-dot dot-yellow"></div>
+                                <div class="terminal-dot dot-green"></div>
                             </div>
-                            <div style="color:var(--text-muted); font-size:0.8rem;">dark@core-system: ~ (interactive cli)</div>
-                            <div style="color:#ffffff; font-size:0.75rem;">ONLINE</div>
+                            <div class="dark-terminal-title">dark@core-system: ~ (interactive cli)</div>
+                            <div class="dark-terminal-status"><span class="status-led"></span> ONLINE</div>
                         </div>
 
                         <div class="dark-terminal-content" id="terminal-body">
@@ -584,24 +584,24 @@
                                 <span class="t-p">dark@terminal:~$</span> <span class="t-cmd">echo "Type help to explore commands"</span>
                             </div>
                             <div class="t-line t-silver" data-i18n="terminalIntro">
-                                اكتب الأوامر أو اضغط على المقترحات بالأسفل:
+                                [SYSTEM] اكتب الأوامر أو اضغط على المقترحات أدناه // Type commands below:
                             </div>
                         </div>
 
                         <div class="dark-terminal-input-bar">
                             <span class="t-p">dark@terminal:~$</span>
-                            <input type="text" class="dark-terminal-input" id="terminal-input" placeholder="Type a command (e.g. help, stack, bots, games, contact)..." autocomplete="off">
+                            <input type="text" class="dark-terminal-input" id="terminal-input" placeholder="Type a command (e.g. help, stack, bots, games, contact)..." autocomplete="off" spellcheck="false">
                         </div>
 
                         <div class="dark-terminal-chips">
-                            <span style="color:var(--text-muted);">Suggestions:</span>
-                            <span class="t-chip" data-cmd="help">help</span>
-                            <span class="t-chip" data-cmd="stack">stack</span>
-                            <span class="t-chip" data-cmd="bots">bots</span>
-                            <span class="t-chip" data-cmd="games">games</span>
-                            <span class="t-chip" data-cmd="software">software</span>
-                            <span class="t-chip" data-cmd="contact">contact</span>
-                            <span class="t-chip" data-cmd="clear">clear</span>
+                            <span class="chips-label">QUICK COMMANDS:</span>
+                            <button type="button" class="t-chip" data-cmd="help">help</button>
+                            <button type="button" class="t-chip" data-cmd="stack">stack</button>
+                            <button type="button" class="t-chip" data-cmd="bots">bots</button>
+                            <button type="button" class="t-chip" data-cmd="games">games</button>
+                            <button type="button" class="t-chip" data-cmd="software">software</button>
+                            <button type="button" class="t-chip" data-cmd="contact">contact</button>
+                            <button type="button" class="t-chip" data-cmd="clear">clear</button>
                         </div>
                     </div>
                 </div>
