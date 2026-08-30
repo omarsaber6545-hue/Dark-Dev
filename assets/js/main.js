@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Smooth Fast Click Navigation (Zero Lag)
-    document.querySelectorAll('.nav-item, a[href^="#"]').forEach(link => {
+    document.querySelectorAll('.nav-item, .mobile-nav-item, a[href^="#"]').forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
             if (href && href.startsWith('#') && href.length > 1) {
@@ -105,6 +105,52 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         });
+    });
+
+    // -------------------------------------------------------------------------
+    // Mobile Menu Drawer Handler
+    // -------------------------------------------------------------------------
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileNavDrawer = document.getElementById('mobileNavDrawer');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-item, .mobile-drawer-cta');
+
+    function toggleMobileMenu(force) {
+        if (!mobileNavDrawer || !mobileMenuBtn) return;
+        const isOpen = typeof force === 'boolean' ? force : !mobileNavDrawer.classList.contains('active');
+        if (isOpen) {
+            mobileNavDrawer.classList.add('active');
+            mobileMenuBtn.classList.add('active');
+            document.body.classList.add('mobile-menu-open');
+        } else {
+            mobileNavDrawer.classList.remove('active');
+            mobileMenuBtn.classList.remove('active');
+            document.body.classList.remove('mobile-menu-open');
+        }
+    }
+
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+    }
+
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            toggleMobileMenu(false);
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (mobileNavDrawer && mobileNavDrawer.classList.contains('active')) {
+            if (!mobileNavDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                toggleMobileMenu(false);
+            }
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') toggleMobileMenu(false);
     });
 
     // High-performance IntersectionObserver for Section Spying (Zero Forced Reflow!)
