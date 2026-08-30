@@ -220,7 +220,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `,
         'contact': () => `
             <div class="t-green">[📫] DIRECT CHANNELS:</div>
-            <div class="t-silver">▪ Discord: <b style="color:#ffffff">rip_luufy25100</b></div>
+            <div class="t-silver">▪ Discord: <a href="https://discord.com/users/1512205578015871048" target="_blank" rel="noopener" style="color:#5865F2; font-weight:700; text-decoration:underline;">rip_luufy25100 (Open Profile)</a></div>
             <div class="t-silver">▪ Email: <b style="color:#ffffff">omarsaber6545@gmail.com</b></div>
             <div class="t-silver">▪ GitHub: <b style="color:#ffffff">github.com/omarsaber6545-hue</b></div>
         `,
@@ -570,9 +570,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="#contactScroll" onclick="document.getElementById('project-modal').classList.remove('open');" class="btn btn-white">
                             Request Custom System
                         </a>
-                        <button class="btn btn-ghost copy-discord-tag">
+                        <a href="https://discord.com/users/1512205578015871048" target="_blank" rel="noopener" class="btn btn-ghost">
                             Contact on Discord
-                        </button>
+                        </a>
                     </div>
                 `;
 
@@ -876,6 +876,7 @@ ${desc}
             secContactDesc: 'تواصل معي مباشرة عبر النموذج أو عبر ديسكورد لمناقشة فكرة مشروعك والبدء فوراً.',
             contactBoxDiscord: 'حساب ديسكورد المباشر',
             contactBtnCopy: 'نسخ الحساب',
+            contactBtnDiscordProfile: 'فتح البروفايل',
             contactBoxEmail: 'البريد الإلكتروني للعمل',
             contactBoxStatus: 'حالة التواجد الحالية',
             contactBoxTimezone: 'المنطقة الزمنية وسرعة الرد',
@@ -1015,6 +1016,7 @@ ${desc}
             secContactDesc: 'Contact Dark directly via the form or on Discord to discuss your requirements and get started immediately.',
             contactBoxDiscord: 'Direct Discord Handle',
             contactBtnCopy: 'Copy Discord Tag',
+            contactBtnDiscordProfile: 'OPEN PROFILE',
             contactBoxEmail: 'Business Email',
             contactBoxStatus: 'Current Availability',
             contactBoxTimezone: 'Timezone & Response Speed',
