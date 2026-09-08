@@ -220,9 +220,15 @@ document.addEventListener('DOMContentLoaded', () => {
         `,
         'contact': () => `
             <div class="t-green">[📫] DIRECT CHANNELS:</div>
-            <div class="t-silver">▪ Discord: <a href="https://discord.com/users/1512205578015871048" target="_blank" rel="noopener" style="color:#5865F2; font-weight:700; text-decoration:underline;">rip_luufy25100 (Open Profile)</a></div>
+            <div class="t-silver">▪ Discord Profile: <a href="https://discord.com/users/1512205578015871048" target="_blank" rel="noopener" style="color:#5865F2; font-weight:700; text-decoration:underline;">rip_luufy25100 (Open Profile)</a></div>
+            <div class="t-silver">▪ Discord Server: <a href="https://discord.gg/jBJFVhkVq" target="_blank" rel="noopener" style="color:#5865F2; font-weight:700; text-decoration:underline;">discord.gg/jBJFVhkVq (Join Community)</a></div>
             <div class="t-silver">▪ Email: <b style="color:#ffffff">omarsaber6545@gmail.com</b></div>
             <div class="t-silver">▪ GitHub: <b style="color:#ffffff">github.com/omarsaber6545-hue</b></div>
+        `,
+        'server': () => `
+            <div class="t-green">[🌐] OFFICIAL DISCORD SERVER:</div>
+            <div class="t-silver">Join DARK's developer hub, bot support & gaming community:</div>
+            <div class="t-white">👉 <a href="https://discord.gg/jBJFVhkVq" target="_blank" rel="noopener" style="color:#5865F2; font-weight:700; text-decoration:underline;">https://discord.gg/jBJFVhkVq</a></div>
         `,
         'clear': () => 'CLEAR_ACTION'
     };
@@ -877,6 +883,9 @@ ${desc}
             contactBoxDiscord: 'حساب ديسكورد المباشر',
             contactBtnCopy: 'نسخ الحساب',
             contactBtnDiscordProfile: 'فتح البروفايل',
+            contactBoxServer: 'سيرفر ديسكورد الرسمي',
+            contactBtnJoinServer: 'انضم للسيرفر',
+            heroDiscordServer: 'سيرفر ديسكورد',
             contactBoxEmail: 'البريد الإلكتروني للعمل',
             contactBoxStatus: 'حالة التواجد الحالية',
             contactBoxTimezone: 'المنطقة الزمنية وسرعة الرد',
@@ -1017,6 +1026,9 @@ ${desc}
             contactBoxDiscord: 'Direct Discord Handle',
             contactBtnCopy: 'Copy Discord Tag',
             contactBtnDiscordProfile: 'OPEN PROFILE',
+            contactBoxServer: 'Official Discord Server',
+            contactBtnJoinServer: 'JOIN SERVER',
+            heroDiscordServer: 'DISCORD SERVER',
             contactBoxEmail: 'Business Email',
             contactBoxStatus: 'Current Availability',
             contactBoxTimezone: 'Timezone & Response Speed',
