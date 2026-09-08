@@ -226,9 +226,20 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="t-silver">▪ GitHub: <b style="color:#ffffff">github.com/omarsaber6545-hue</b></div>
         `,
         'server': () => `
-            <div class="t-green">[🌐] OFFICIAL DISCORD SERVER:</div>
-            <div class="t-silver">Join DARK's developer hub, bot support & gaming community:</div>
-            <div class="t-white">👉 <a href="https://discord.gg/jBJFVhkVq" target="_blank" rel="noopener" style="color:#5865F2; font-weight:700; text-decoration:underline;">https://discord.gg/jBJFVhkVq</a></div>
+            <div class="t-green">[🚀] HORIZON SERVICES // OFFICIAL DISCORD SERVER:</div>
+            <div class="t-silver">Professional Development. Complete Solutions.</div>
+            <div class="t-silver">Join Horizon Services for custom Bots, Web Dev, VPS & Full Projects:</div>
+            <div class="t-white">👉 <a href="https://discord.gg/jBJFVhkVq" target="_blank" rel="noopener" style="color:#ff3344; font-weight:700; text-decoration:underline;">https://discord.gg/jBJFVhkVq (Open Ticket)</a></div>
+        `,
+        'services': () => `
+            <div class="t-green">[💻] HORIZON SERVICES PORTFOLIO:</div>
+            <div class="t-silver">1. <b>Discord Bots</b> - Custom bots, security, economy & audio.</div>
+            <div class="t-silver">2. <b>Telegram Bots</b> - Automation & community systems.</div>
+            <div class="t-silver">3. <b>Web Development</b> - Modern sites, dashboards & APIs.</div>
+            <div class="t-silver">4. <b>NPM Packages</b> - Reusable code packages & modules.</div>
+            <div class="t-silver">5. <b>Full Projects</b> - All-in-one: Bot + Web + Backend + DB.</div>
+            <div class="t-silver">6. <b>VPS Management</b> - Linux provisioning & environment setup.</div>
+            <div class="t-white">👉 Order via Server Ticket: <a href="https://discord.gg/jBJFVhkVq" target="_blank" rel="noopener" style="color:#ff3344; font-weight:700;">discord.gg/jBJFVhkVq</a></div>
         `,
         'clear': () => 'CLEAR_ACTION'
     };
@@ -815,20 +826,24 @@ ${desc}
             p4Btn1: 'تفاصيل البوت',
             p4Btn2: 'طلب البوت',
 
-            secServicesTitle: 'حلول برمجية متكاملة وهندسة أنظمة',
-            secServicesDesc: 'تطوير مخصص وشامل يبدأ من التخطيط المعماري وحتى البناء والتسليم النهائي.',
-            s1Title: 'تطوير برمجيات سطح المكتب والسحابة',
-            s1Desc: 'بناء تطبيقات سطح المكتب عالية الأداء لأنظمة Windows وLinux وmacOS بلغات C++ وC# وPython مع استهلاك أدنى لموارد النظام.',
-            s2Title: 'صناعة الألعاب والمحركات 2D / 3D',
-            s2Desc: 'تطوير الألعاب المستقلة من الصفر، برمجة أنظمة الفيزياء، الذكاء الاصطناعي للأعداء، وتطوير المودات الاحترافية لمحركات الألعاب.',
-            s3Title: 'هندسة بوتات وأنظمة ديسكورد',
-            s3Desc: 'برمجة بوتات ديسكورد شاملة: أنظمة حماية (Anti-Nuke)، صوتيات فائقة الجودة، ألعاب واقتصاد، ولوحات تحكم ويب متزامنة عبر REST API.',
-            s4Title: 'تطبيقات الويب المتكاملة والـ APIs',
-            s4Desc: 'بناء منصات ويب تفاعلية وسريعة الاستجابة ولوحات تحكم إدارية مع قواعد بيانات سريعة وقوية (Full-Stack).',
-            s5Title: 'الأتمتة والذكاء الاصطناعي وScraping',
-            s5Desc: 'بناء روبوتات أتمتة المهام، استخراج وتحليل البيانات الضخمة (Web Scraping)، ودمج نماذج الذكاء الاصطناعي المتقدمة.',
-            s6Title: 'الحماية وتحسين زمن الاستجابة',
-            s6Desc: 'مراجعة وتأمين الأكواد البرمجية، تشفير البيانات الحساسة، وتحسين أداء الخوارزميات وتخفيض البينج وزمن الاستجابة.',
+            secServicesTitle: 'Horizon Services — حلول برمجية متكاملة وتطوير احترافي',
+            secServicesDesc: 'Professional Development. Complete Solutions. — خدمات برمجية وتقنية متقدمة للأفراد والمشاريع.',
+            horizonIntroText: 'يسعدنا الإعلان عن افتتاح Horizon Services، والمخصص لتقديم الخدمات البرمجية والتقنية بشكل احترافي، لتوفير حلول متكاملة للأفراد والمشاريع بدايةً من تطوير الأنظمة الصغيرة وحتى بناء وإدارة المشاريع الكاملة.',
+            horizonCtaBtn: 'فتح تذكرة في السيرفر',
+            horizonTicketHint: 'لطلب أي خدمة أو استفسار، افتح تذكرة في السيرفر',
+            upcomingServicesHead: 'خدمات جديدة نعمل على إضافتها والتوسع فيها:',
+            s1Title: 'Discord Bots',
+            s1Desc: 'برمجة وتطوير بوتات Discord مخصصة حسب احتياجات المشروع بأعلى سرعة وأمان وحماية ضد السبام والريد.',
+            s2Title: 'Telegram Bots',
+            s2Desc: 'تطوير بوتات Telegram وأنظمة مخصصة لمختلف الاستخدامات وإدارة القنوات والمجموعات والربط البرمجي.',
+            s3Title: 'Web Development',
+            s3Desc: 'تصميم وبرمجة المواقع والـ Dashboards والأنظمة المرتبطة بها بتصاميم عصرية فخمة وأداء فائق السرعة.',
+            s4Title: 'NPM Packages',
+            s4Desc: 'تطوير مكتبات وحزم NPM قابلة لإعادة الاستخدام ومخصصة للمشاريع البرمجية مع كود نظيف وتوثيق دقيق.',
+            s5Title: 'Full Projects ⭐',
+            s5Desc: 'تنفيذ مشاريع متكاملة تشمل Discord Bot + Website/Dashboard + Backend + Database + الأنظمة المطلوبة ضمن مشروع واحد متكامل.',
+            s6Title: 'VPS Management',
+            s6Desc: 'إدارة وتجهيز VPS، تثبيت المتطلبات والبرامج اللازمة، إعداد الخدمات والبيئة المناسبة لتشغيل مشاريع العميل.',
 
             secStackTitle: 'متمكن من لغات وتقنيات البرمجة الحديثة',
             secStackDesc: 'مرونة فائقة في كتابة الأكواد واختيار التقنية الأمثل والأسرع لكل مشروع.',
