@@ -11,7 +11,7 @@
     <link rel="apple-touch-icon" href="assets/images/favicon.svg?v=3">
 
     <!-- Luxury Dark Stylesheet -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css?v=2.5">
 
     <!-- Vercel Web Analytics -->
     <script>
@@ -20,6 +20,158 @@
         };
     </script>
     <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+
+    <!-- Horizon Services & Cache-Proof Critical Styles -->
+    <style id="horizon-critical-styles">
+        .horizon-intro-card {
+            background: linear-gradient(135deg, rgba(225, 29, 72, 0.12) 0%, rgba(8, 9, 14, 0.98) 50%, rgba(12, 13, 18, 0.99) 100%) !important;
+            border: 1px solid rgba(225, 29, 72, 0.35) !important;
+            border-radius: 18px !important;
+            padding: 32px 36px !important;
+            margin-bottom: 40px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            gap: 28px !important;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.9), 0 0 30px rgba(225, 29, 72, 0.1) !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        .horizon-intro-left {
+            display: flex !important;
+            align-items: center !important;
+            gap: 24px !important;
+            flex: 1 !important;
+        }
+        .horizon-brand-logo-wrap {
+            position: relative !important;
+            flex-shrink: 0 !important;
+        }
+        .horizon-brand-logo-img {
+            width: 84px !important;
+            height: 84px !important;
+            border-radius: 18px !important;
+            object-fit: cover !important;
+            border: 2px solid rgba(225, 29, 72, 0.6) !important;
+            box-shadow: 0 8px 25px rgba(225, 29, 72, 0.45) !important;
+            display: block !important;
+        }
+        .horizon-brand-tagline {
+            font-family: var(--font-mono, monospace) !important;
+            font-size: 0.8rem !important;
+            color: #ff3344 !important;
+            letter-spacing: 1px !important;
+            font-weight: 700 !important;
+            margin-bottom: 8px !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 8px !important;
+        }
+        .horizon-brand-title {
+            font-size: 1.7rem !important;
+            font-weight: 800 !important;
+            color: #ffffff !important;
+            margin-bottom: 8px !important;
+            line-height: 1.25 !important;
+        }
+        .horizon-brand-desc {
+            color: #a1a1aa !important;
+            font-size: 0.95rem !important;
+            line-height: 1.65 !important;
+            max-width: 680px !important;
+            margin: 0 !important;
+        }
+        .horizon-intro-cta {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: flex-end !important;
+            gap: 10px !important;
+            flex-shrink: 0 !important;
+        }
+        .btn-horizon-red {
+            background: linear-gradient(135deg, #ff1e27 0%, #b91c1c 100%) !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            padding: 14px 28px !important;
+            border-radius: 10px !important;
+            border: 1px solid rgba(255, 255, 255, 0.25) !important;
+            box-shadow: 0 8px 25px rgba(225, 29, 72, 0.45) !important;
+            display: inline-flex !important;
+            align-items: center !important;
+            gap: 10px !important;
+            transition: all 0.25s ease !important;
+            text-decoration: none !important;
+            font-size: 0.95rem !important;
+            cursor: pointer !important;
+        }
+        .btn-horizon-red:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 12px 35px rgba(225, 29, 72, 0.7) !important;
+            filter: brightness(1.15) !important;
+        }
+        .horizon-ticket-hint {
+            font-size: 0.78rem !important;
+            color: #71717a !important;
+            text-align: right !important;
+        }
+        .lux-service-card.horizon-featured {
+            border-color: rgba(225, 29, 72, 0.5) !important;
+            background: linear-gradient(180deg, rgba(225, 29, 72, 0.08) 0%, #08090e 100%) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8), 0 0 25px rgba(225, 29, 72, 0.15) !important;
+        }
+        .upcoming-services-wrap {
+            margin-top: 40px !important;
+            background: rgba(255, 255, 255, 0.02) !important;
+            border: 1px dashed rgba(255, 255, 255, 0.15) !important;
+            border-radius: 16px !important;
+            padding: 26px 32px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: space-between !important;
+            flex-wrap: wrap !important;
+            gap: 20px !important;
+        }
+        .contact-server-logo {
+            width: 48px !important;
+            height: 48px !important;
+            border-radius: 12px !important;
+            object-fit: cover !important;
+            border: 1px solid rgba(225, 29, 72, 0.6) !important;
+            flex-shrink: 0 !important;
+            box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4) !important;
+            display: block !important;
+        }
+        @media (max-width: 768px) {
+            .horizon-intro-card {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 24px 20px !important;
+                gap: 20px !important;
+            }
+            .horizon-intro-left {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                gap: 16px !important;
+            }
+            .horizon-intro-cta {
+                width: 100% !important;
+                align-items: stretch !important;
+            }
+            .btn-horizon-red {
+                width: 100% !important;
+                justify-content: center !important;
+            }
+            .horizon-ticket-hint {
+                text-align: center !important;
+            }
+            .upcoming-services-wrap {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+                padding: 20px !important;
+            }
+        }
+    </style>
+
 </head>
 <body>
 
@@ -367,7 +519,7 @@
                 <div class="horizon-intro-card">
                     <div class="horizon-intro-left">
                         <div class="horizon-brand-logo-wrap">
-                            <img src="assets/images/horizon-logo.png" alt="Horizon Services Official Logo" class="horizon-brand-logo-img">
+                            <img src="data:image/webp;base64,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" alt="Horizon Services Official Logo" class="horizon-brand-logo-img">
                         </div>
                         <div>
                             <div class="horizon-brand-tagline">
@@ -380,7 +532,7 @@
                         </div>
                     </div>
                     <div class="horizon-intro-cta">
-                        <a href="https://discord.gg/jBJFVhkVq" target="_blank" rel="noopener" class="btn btn-horizon-red">
+                        <a href="https://discord.gg/jBJFVhkVq" target="_blank" rel="noopener" class="btn btn-horizon-red" style="background: linear-gradient(135deg, #ff1e27 0%, #b91c1c 100%); color: #ffffff !important; font-weight: 700; border-radius: 10px; display: inline-flex; align-items: center; text-decoration: none;">
                             <svg class="btn-icon-svg" viewBox="0 0 24 24"><path d="M20.3 4.4A19.6 19.6 0 0015.4 3a13.3 13.3 0 00-.6 1.3 18.2 18.2 0 00-5.6 0A13.3 13.3 0 008.6 3a19.5 19.5 0 00-4.9 1.4C1.2 8.2.5 13.2.9 18.2A19.7 19.7 0 007 21c.5-.7 1-1.4 1.4-2.2a12.8 12.8 0 01-2-1c.2-.1.3-.3.5-.4a14 14 0 0010.2 0c.2.1.3.3.5.4a12.8 12.8 0 01-2 1c.4.8.9 1.5 1.4 2.2a19.7 19.7 0 006.1-2.8c.5-5.7-.8-10.6-2.8-13.8zM8.5 15.3c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1zm7 0c-1.1 0-2-.9-2-2.1s.9-2.1 2-2.1c1.1 0 2 .9 2 2.1s-.9 2.1-2 2.1z"/></svg>
                             <span data-i18n="horizonCtaBtn">فتح تذكرة في السيرفر</span>
                         </a>
@@ -627,12 +779,12 @@
                         </div>
 
                         <div class="contact-box-item" style="border-color: rgba(225, 29, 72, 0.4); background: linear-gradient(135deg, rgba(225, 29, 72, 0.06) 0%, rgba(8, 9, 14, 0.95) 100%);">
-                            <img src="assets/images/horizon-logo.png" alt="Horizon Services" class="contact-server-logo">
+                            <img src="data:image/webp;base64,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" alt="Horizon Services" class="contact-server-logo">
                             <div style="flex-grow:1;">
                                 <div class="contact-label-lux" data-i18n="contactBoxServer">سيرفر Horizon Services الرسمي</div>
                                 <div class="contact-val-lux" style="color:#ff3344; font-weight:700;">discord.gg/jBJFVhkVq</div>
                             </div>
-                            <a href="https://discord.gg/jBJFVhkVq" target="_blank" rel="noopener" class="btn btn-horizon-red" style="padding:8px 16px; font-size:0.8rem;">
+                            <a href="https://discord.gg/jBJFVhkVq" target="_blank" rel="noopener" class="btn btn-horizon-red" style="background: linear-gradient(135deg, #ff1e27 0%, #b91c1c 100%); color: #ffffff !important; font-weight: 700; border-radius: 10px; display: inline-flex; align-items: center; text-decoration: none;" style="padding:8px 16px; font-size:0.8rem;">
                                 <span data-i18n="contactBtnJoinServer">انضم وافتح تذكرة</span>
                             </a>
                         </div>
@@ -768,7 +920,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
+    <script src="assets/js/main.js?v=2.5"></script>
 
     <!-- Vercel Web Analytics & Speed Insights -->
     <script>
